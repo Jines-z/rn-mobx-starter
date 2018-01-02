@@ -1,8 +1,32 @@
 ![rn-mobx-start-kit](https://github.com/bevelery/rn-mobx-start-kit/blob/master/logo.png?raw=true)
 # rn-mobx-start-kit
-本项目致力于帮助`react-native`新手小白快速上手，不介绍[react](http://www.ruanyifeng.com/blog/2015/03/react.html)、[react-native](http://reactnative.cn/)和[ES6](http://blog.csdn.net/beverley__/article/details/78547973)语法。如果你具备`react`开发经验，写代码将不是问题，难点只在于开始的配置上边。如果你不具备`react`开发经验，也可以先了解一下`react-native`开发中会遇到的各种问题和相关知识。
+本项目致力于帮助`react-native`新手小白快速上手，不介绍[react](http://www.ruanyifeng.com/blog/2015/03/react.html)、[react-native](http://reactnative.cn/)和[ES6](http://blog.csdn.net/beverley__/article/details/78547973)语法。如果你具备`react`开发经验，写代码将不是问题，坑只在于开始的配置上边。
 
-本项目中所有内容，都是我入门时遇到的问题，如果没有你的问题，你可以开一个issues，我会用我的资源帮你研究，也或许有其他人遇到过相同的问题会直接回复你。
+## 前言
+我是一个有升级强迫症的人，无论是手机还是电脑软件，有级必升。我觉得这是好的。如果你是打算开发一个新东西，我建议你把不影响老项目的所有工具都升级成最新稳定版。
+## 项目环境及各种依赖的版本：
+Windows 10：（Windows上只能开发android）
+1. oppo 5.1
+2. 虚拟机-android 4.2.2
+3. 虚拟机-android 5.1.0
+4. 虚拟机-android 7.0.0
+5. 虚拟机-android 8.0
+MacOS 10.03.2：
+1. iphone 11.2.1
+2. oppo 5.1
+3. 虚拟机-iphone6
+4. 虚拟机-iphone8
+5. 虚拟机-iphoneX
+Node_modules：
+1. react-native        ^0.51.0
+2. react               ^16.0.0
+3. mobx                ^3.4.1
+4. mobx-react          ^4.3.5
+5. rn-splash-screen    ^5.2.0
+6. react-navigation    ^1.0.0-beta.22
+7. rn-textinputlayout  ^1.0.5
+8. react-native-button        ^2.2.0
+9. react-native-vector-icons  ^4.4.3
 
 ## 目录
 - [项目环境及各种依赖的版本](#项目环境及各种依赖的版本)
@@ -10,19 +34,6 @@
 - [Android 6.0及以上修改两个文件](#android-60及以上修改两个文件)
 - [更换设备](#更换设备)
 - [常用命令](#常用命令)
-
-## 项目环境及各种依赖的版本：
-1. Windows10
-2. 安卓手机5.1(暂无ios适配，没有mac，我也是小白~~~)
-3. react-native        ^0.51.0
-4. react               ^16.0.0
-5. mobx                ^3.4.1
-6. mobx-react          ^4.3.5
-7. rn-splash-screen    ^5.2.0
-8. react-navigation    ^1.0.0-beta.22
-9. rn-textinputlayout  ^1.0.5
-10. react-native-button        ^2.2.0
-11. react-native-vector-icons  ^4.4.3
 
 ## First Blood
 请打开百度，输入react-native，点击第一个[react-native中文网](http://reactnative.cn/)-文档-搭建开发环境，请仔细仔细再仔细的按照教程把需要的环境配置起来，并收藏该网址。
