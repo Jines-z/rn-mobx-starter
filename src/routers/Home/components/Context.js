@@ -10,17 +10,21 @@ import PropTypes from 'prop-types'
 
 @observer
 export default class Context extends Component<{}> {
+    componentWillReact(){
+        console.log('这是新增的生命周期，当组件被@observer监测之后，组件内部被observable观测的数据改变后，会出发这个函数')
+    }
     static contextTypes = {
         store: PropTypes.object,
     };
     render() {
         const { store } = this.context;
+        console.log(store)
         return (
             <View>
                 <Text>
                     {store.userInfo.userName}
                 </Text>
-                <Button onPress={e=>store.changeStore('asd')}
+                <Button onPress={e=>store.changeStore('传递的值')}
                         style={styles.buttonText}
                         containerStyle={styles.buttonContainer}
                 >

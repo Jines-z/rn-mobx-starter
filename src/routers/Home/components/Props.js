@@ -17,8 +17,8 @@ export default class Props extends Component<{}> {
                     <Text>点我改变homeStore</Text>
                 </TouchableOpacity>
                 {completedHomeStore && Alert.alert(
-                    'Alert~~title',
-                    'completedHomeStore是一个被检测的变量(就说是变量吧)，homeStore改变时，会触发completedHomeStore这个函数'
+                    'homeStore长度大于11了',
+                    'homeStore改变时，会触发@completed completedHomeStore这个函数'
                 )}
             </View>
         );
