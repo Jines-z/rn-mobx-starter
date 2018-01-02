@@ -11,12 +11,14 @@ Windows 10：（Windows上只能开发android）
 3. 虚拟机-android 5.1.0
 4. 虚拟机-android 7.0.0
 5. 虚拟机-android 8.0
+
 MacOS 10.03.2：
 1. iphone 11.2.1
 2. oppo 5.1
 3. 虚拟机-iphone6
 4. 虚拟机-iphone8
 5. 虚拟机-iphoneX
+
 Node_modules：
 1. react-native        ^0.51.0
 2. react               ^16.0.0
