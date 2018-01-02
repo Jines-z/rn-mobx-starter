@@ -5,21 +5,31 @@
 ## 前言
 我是一个有升级强迫症的人，无论是手机还是电脑软件，有级必升。我觉得这是好的。如果你是打算开发一个新东西，我建议你把不影响老项目的所有工具都升级成最新稳定版。
 ## 项目环境及各种依赖的版本：
-Windows 10：（Windows上只能开发android）
+**Windows 10**：(Windows上只能开发android)
 1. oppo 5.1
 2. 虚拟机-android 4.2.2
 3. 虚拟机-android 5.1.0
 4. 虚拟机-android 7.0.0
 5. 虚拟机-android 8.0
+6. node 8.9.0
+7. npm 5.5.1
+8. python 2.7.14
+9. Android Studio 3.0 (用来下载sdk)
+10. javac 1.8.0_151
 
-MacOS 10.03.2：
-1. iphone 11.2.1
-2. oppo 5.1
-3. 虚拟机-iphone6
-4. 虚拟机-iphone8
-5. 虚拟机-iphoneX
+**MacOS 10.13.2**：
+1. Xcode 9.2
+2. iphone 11.2.1
+3. oppo 5.1
+4. 虚拟机-iphone6
+5. 虚拟机-iphone8
+6. 虚拟机-iphoneX
+7. node 9.3.0
+8. npm 5.6.0
+9. Android Studio 3.0 (用来下载sdk)
+10. javac 1.8.0_151
 
-Node_modules：
+**Node_modules**：
 1. react-native        ^0.51.0
 2. react               ^16.0.0
 3. mobx                ^3.4.1
