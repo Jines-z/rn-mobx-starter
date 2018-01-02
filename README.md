@@ -103,10 +103,11 @@ clone完成以后进入项目文件夹`cd rn-mobx-start-kit`&&`npm install`等�
 
 ## 常用命令
 1. `react-native start` ~~开一个本地服务器
-2. `react-native run-android` ~~运行android工程
-3. `react-native link` ~~将依赖的有原生代码的第三方组件连接到工程
-4. `npm install xxxx --save` ~~安装生产环境需要的依赖
-5. `npm install xxxx --save-dev` ~~安装开发环境需要的依赖
-6. `npm uninstall xxxx` ~~卸载某一个依赖
-7. `rimraf node_nodules` ~~删除node_modules文件夹，也可以删除其他文件夹，推荐全局安装[gulp-rimraf](https://www.cnblogs.com/gulei/p/5407732.html)
-8. `cd android && ./gradlew assembleRelease` ~~[生成发行APK包](http://reactnative.cn/docs/0.45/signed-apk-android.html)
+2. `react-native run-ios` ~~运行ios工程
+3. `react-native run-android` ~~运行android工程
+4. `react-native link` ~~将依赖的有原生代码的第三方组件连接到工程
+5. `npm install xxxx --save` ~~安装生产环境需要的依赖
+6. `npm install xxxx --save-dev` ~~安装开发环境需要的依赖
+7. `npm uninstall xxxx` ~~卸载某一个依赖
+8. `rimraf node_nodules` ~~删除node_modules文件夹，也可以删除其他文件夹，推荐全局安装[gulp-rimraf](https://www.cnblogs.com/gulei/p/5407732.html)
+9. `cd android && ./gradlew assembleRelease` ~~[生成发行APK包](http://reactnative.cn/docs/0.45/signed-apk-android.html)
