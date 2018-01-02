@@ -4,6 +4,12 @@
 
 ## 前言
 我是一个有升级强迫症的人，无论是手机还是电脑软件，有级必升。我觉得这是好的。如果你是打算开发一个新东西，我建议你把不影响老项目的所有工具都升级成最新稳定版。
+## 目录
+- [项目环境及各种依赖的版本](#项目环境及各种依赖的版本)
+- [First Blood](#first-blood)
+- [Android 6.0及以上修改两个文件](#android-60及以上修改两个文件)
+- [更换设备](#更换设备)
+- [常用命令](#常用命令)
 ## 项目环境及各种依赖的版本：
 **Windows 10**：(Windows上只能开发android)
 1. oppo 5.1
@@ -39,13 +45,6 @@
 7. rn-textinputlayout  ^1.0.5
 8. react-native-button        ^2.2.0
 9. react-native-vector-icons  ^4.4.3
-
-## 目录
-- [项目环境及各种依赖的版本](#项目环境及各种依赖的版本)
-- [First Blood](#first-blood)
-- [Android 6.0及以上修改两个文件](#android-60及以上修改两个文件)
-- [更换设备](#更换设备)
-- [常用命令](#常用命令)
 
 ## First Blood
 请打开百度，输入react-native，点击第一个[react-native中文网](http://reactnative.cn/)-文档-搭建开发环境，请仔细仔细再仔细的按照教程把需要的环境配置起来，并收藏该网址。
