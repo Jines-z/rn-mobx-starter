@@ -12,7 +12,7 @@
 
    ====================================================== */
 
-import {observable, useStrict, action} from 'mobx';
+import {observable, useStrict, action} from 'mobx'
 useStrict(true)
 
 class ContextStore {
@@ -25,7 +25,7 @@ class ContextStore {
      * @param {any} transmit 传递过来的参数
      */
     @action changeStore = (transmit) => {
-        console.log(transmit);
+        console.log(transmit)
         this.userInfo.userName = this.userInfo.userName.toLocaleUpperCase()
     }
 }

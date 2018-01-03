@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import {
     Text,
     View
-} from 'react-native';
+} from 'react-native'
 import store from '../Home/store'
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react'
 
 @observer
 export default class All extends Component<{}> {
@@ -17,6 +17,6 @@ export default class All extends Component<{}> {
                     {text}
                 </Text>
             </View>
-        );
+        )
     }
 }

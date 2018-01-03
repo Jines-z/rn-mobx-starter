@@ -1,25 +1,25 @@
 import {
     StackNavigator,
     TabNavigator
-} from 'react-navigation';
-import React from 'react';
+} from 'react-navigation'
+import React from 'react'
 import {
     Image,
     Text,
     Platform
-} from 'react-native';
-import Home from './Home';
-import Mine from './Mine';
-import All from './All';
-import InPage from './InPage';
-import InPage2 from './InPage2';
+} from 'react-native'
+import Home from './Home'
+import Mine from './Mine'
+import All from './All'
+import InPage from './InPage'
+import InPage2 from './InPage2'
 
-const home = require('../assets/home.png');
-const home_active = require('../assets/home_active.png');
-const all = require('../assets/all.png');
-const all_active = require('../assets/all_active.png');
-const mine = require('../assets/mine.png');
-const mine_active = require('../assets/mine_active.png');
+const home = require('../assets/home.png')
+const home_active = require('../assets/home_active.png')
+const all = require('../assets/all.png')
+const all_active = require('../assets/all_active.png')
+const mine = require('../assets/mine.png')
+const mine_active = require('../assets/mine_active.png')
 
 const Tab = TabNavigator({
     Home: {
@@ -158,7 +158,7 @@ const Tab = TabNavigator({
         // labelStyle:{}, // label的样式。
         // iconStyle:{}, // 图标的样式。
     }
-});
+})
 
 // 将需要跳转的页面注册在这里，全局才可以跳转
 export default Routers = StackNavigator({
@@ -181,4 +181,4 @@ export default Routers = StackNavigator({
     InPage2: {
         screen: InPage2
     }
-}, {});
+}, {})

@@ -11,7 +11,7 @@
 
    ====================================================== */
 
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
 export default class Provider extends Component<{}> {
@@ -21,14 +21,14 @@ export default class Provider extends Component<{}> {
     // ------------------------------------
     static propTypes = {
         store: PropTypes.object.isRequired
-    };
+    }
 
     // ------------------------------------
     // getChildContext指定的传递给子组件的属性需要先通过 childContextTypes 来指定，否则报错
     // ------------------------------------
     static childContextTypes = {
         store: PropTypes.object
-    };
+    }
 
     getChildContext() {
         return {
@@ -37,6 +37,6 @@ export default class Provider extends Component<{}> {
     }
 
     render() {
-        return this.props.children;
+        return this.props.children
     }
 }

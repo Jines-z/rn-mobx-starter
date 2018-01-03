@@ -38,7 +38,7 @@ import Routers from './routers'
 export default class App extends Component<{}> {
     componentDidMount() {
         setTimeout(() => {
-            SplashScreen.hide();
+            SplashScreen.hide()
         }, 2000);
     }
     render() {
@@ -46,6 +46,6 @@ export default class App extends Component<{}> {
             <Provider store={contextStore}>
                 <Routers screenProps={{themeColor:'white'}}/>
             </Provider>
-        );
+        )
     }
 }

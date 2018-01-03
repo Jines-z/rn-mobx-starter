@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import {
     StyleSheet,
     View,
     Text
-} from 'react-native';
+} from 'react-native'
 import store from '../store'
 import Context from '../components/Context'
 import Props from '../components/Props'
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react'
 
 @observer
 export default class Home extends Component<{}> {
@@ -30,7 +30,7 @@ export default class Home extends Component<{}> {
                     </Text>
                 </View>
             </View>
-        );
+        )
     }
 }
 
@@ -41,4 +41,4 @@ const styles = StyleSheet.create({
     bottom:{
         marginBottom:30
     }
-});
+})

@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import {
     Text,
     View,
     StyleSheet,
     TextInput
-} from 'react-native';
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
-import Button from 'react-native-button';
-import {TextInputLayout} from 'rn-textinputlayout';
-const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+} from 'react-native'
+import Icon from 'react-native-vector-icons/dist/FontAwesome'
+import Button from 'react-native-button'
+import {TextInputLayout} from 'rn-textinputlayout'
+const EMAIL_REGEX = /^(([^<>()\[\]\\.,:\s@"]+(\.[^<>()\[\]\\.,:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 export default class Mine extends Component<{}> {
     render() {
         return (
@@ -42,7 +42,7 @@ export default class Mine extends Component<{}> {
                     />
                 </TextInputLayout>
             </View>
-        );
+        )
     }
 }
 const styles = StyleSheet.create({
@@ -58,4 +58,4 @@ const styles = StyleSheet.create({
         marginTop: 16,
         marginHorizontal: 36
     }
-});
+})

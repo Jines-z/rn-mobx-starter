@@ -1,13 +1,13 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component, PropTypes} from 'react'
 import {
     Text,
     View,
     TouchableOpacity,
     Alert
-} from 'react-native';
+} from 'react-native'
 export default class Props extends Component<{}> {
     render() {
-        const { homeStore,changeHomeStore,completedHomeStore } = this.props;
+        const { homeStore,changeHomeStore,completedHomeStore } = this.props
         return (
             <View>
                 <Text>
@@ -21,6 +21,6 @@ export default class Props extends Component<{}> {
                     'homeStore改变时，会触发@completed completedHomeStore这个函数'
                 )}
             </View>
-        );
+        )
     }
 }

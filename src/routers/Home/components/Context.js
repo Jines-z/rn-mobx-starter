@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import {
     Text,
     View,
     StyleSheet
-} from 'react-native';
-import { observer } from 'mobx-react';
-import Button from 'react-native-button';
+} from 'react-native'
+import { observer } from 'mobx-react'
+import Button from 'react-native-button'
 import PropTypes from 'prop-types'
 
 @observer
@@ -15,9 +15,9 @@ export default class Context extends Component<{}> {
     }
     static contextTypes = {
         store: PropTypes.object,
-    };
+    }
     render() {
-        const { store } = this.context;
+        const { store } = this.context
         console.log(store)
         return (
             <View>
@@ -37,7 +37,7 @@ export default class Context extends Component<{}> {
                 </Button>
             </View>
 
-        );
+        )
     }
 }
 const styles = StyleSheet.create({
@@ -55,4 +55,4 @@ const styles = StyleSheet.create({
         backgroundColor:'#aaa4a4',
         marginBottom:20
     }
-});
+})
