@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import store from '../Home/store'
 import { observer } from 'mobx-react';
+
 @observer
 export default class All extends Component<{}> {
     render() {
