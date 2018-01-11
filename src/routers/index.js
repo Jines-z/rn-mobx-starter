@@ -166,15 +166,6 @@ export default Routers = StackNavigator({
     Tab: {
         screen: Tab
     },
-    Home: {
-        screen: Home
-    },
-    Mine: {
-        screen: Mine
-    },
-    All: {
-        screen: All
-    },
     InPage: {
         screen: InPage
     },
