@@ -91,6 +91,12 @@ clone完成以后进入项目文件夹`cd rn-mobx-start-kit`&&`npm install`等�
 
 **注意**：第一次运行`react-native run-android`到99%时，会卡住，这时手机底部会出现一个提示框，询问是否安装软件，点击确定即可。
 
+## 安卓打包Release.apk图片不显示
+在根目录下执行
+~~~
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.bundle --assets-dest android/app/src/main/res/
+~~~
+
 ## 更换设备
 当你想换手机或者模拟器，并且系统不同的情况时，需要修改上文提到的两个文件，删除下边三个文件夹。
 ~~~
