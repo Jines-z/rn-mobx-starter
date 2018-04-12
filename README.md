@@ -1,5 +1,5 @@
-![rn-mobx-start-kit](./logo.png)
-# rn-mobx-start-kit
+![rn-mobx-course](./logo.png)
+# rn-mobx-course
 本项目致力于帮助`react-native`新手小白快速上手，不介绍[react](http://www.ruanyifeng.com/blog/2015/03/react.html)、[react-native](http://reactnative.cn/)和[ES6](http://blog.csdn.net/beverley__/article/details/78547973)语法。如果你具备`react`开发经验，写代码将不是问题，坑只在于开始的配置上边。
 
 ## 前言
