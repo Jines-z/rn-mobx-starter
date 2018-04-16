@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {
-    AppRegistry,
     StyleSheet,
     Platform,
     Text,
@@ -24,11 +23,17 @@ import store from '../store'
 import Context from '../components/Context'
 import Props from '../components/Props'
 import {observer} from 'mobx-react'
-const appKey = 'g-qit4rL2WEKhpXHl1-cgZuXfT6YATUd'
+let appKey = ''
+if (Platform.OS == "android") {
+    appKey = 'CLLwkMd2peUEyvKtYpwIMrcHtQZLsnrj'
+} else {
+    appKey = 'g-qit4rL2WEKhpXHl1-cgZuXfT6YATUd'
+}
 
 @observer
 export default class Home extends Component<{}> {
     componentWillMount(){
+        Alert.alert(`${isFirstTime}`+'----'+`${isRolledBack}`)
         if (isFirstTime) {
             Alert.alert('提示', '这是当前版本第一次启动,是否要模拟启动失败?失败将回滚到上一版本', [
                 {text: '是', onPress: ()=>{throw new Error('模拟启动失败,请重启应用')}},
