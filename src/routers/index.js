@@ -91,12 +91,7 @@ const Tab = TabNavigator({
         screen: Mine,
         navigationOptions({navigation, screenProps}) {
             return {
-                headerTitle: '我的',
-                headerStyle: {backgroundColor: 'white'},
-                headerTitleStyle: {
-                    fontSize: 30,
-                    color: 'black'
-                },
+                header:null,
                 gesturesEnabled: true,
                 tabBarVisible: true,
                 tabBarIcon: (({tintColor, focused}) => {
@@ -108,9 +103,6 @@ const Tab = TabNavigator({
                     )
                 }),
                 tabBarLabel: '我的',
-                headerRight: (
-                    <Text style={{color: 'red', marginRight: 20}} onPress={() => navigation.navigate('Home')}>主页</Text>
-                )
             }
         }
     }
