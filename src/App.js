@@ -39,7 +39,7 @@ export default class App extends Component<{}> {
     componentDidMount() {
         setTimeout(() => {
             SplashScreen.hide()
-        }, 2000);
+        }, 10);
     }
     render() {
         return (
@@ -49,3 +49,6 @@ export default class App extends Component<{}> {
         )
     }
 }
+
+
+console.disableYellowBox = true

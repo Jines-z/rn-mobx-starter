@@ -3,16 +3,43 @@ import {
     StyleSheet,
     Text,
     View,
+    Image
 } from 'react-native';
 import store from '../store'
 import Context from '../components/Context'
 import Props from '../components/Props'
+import HeaderLeft from '../components/HeaderLeft'
 import {observer} from 'mobx-react'
+
+const home = require('../../../assets/home.png')
+const home_active = require('../../../assets/home_active.png')
 
 @observer
 export default class Home extends Component<{}> {
+    static navigationOptions = ({ navigation, screenProps }) => ({
+        headerTitleStyle: {
+            fontSize: 30,
+            color: 'black'
+        },
+        headerStyle: {
+            backgroundColor: 'white',
+            // borderBottomWidth:0
+        },
+        headerLeft:(
+            <HeaderLeft />
+        ),
+        tabBarIcon: (({tintColor, focused}) => {
+            return (
+                <Image
+                    source={!focused ? home : home_active}
+                    style={[{height: 20, width: 20}, {resizeMode: 'stretch'}]}
+                />
+            )
+        }),
+        tabBarLabel: '主页',
+        gesturesEnabled: true,
+    })
     render() {
-        console.log(this.props)
         const {homeStore, changeText, completedHomeStore} = store
         const propStore = {
             homeStore,
@@ -37,7 +64,8 @@ export default class Home extends Component<{}> {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor:'white'
     },
     bottom: {
         marginBottom: 30
