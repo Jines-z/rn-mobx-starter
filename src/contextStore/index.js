@@ -29,12 +29,23 @@ class ContextStore {
         userName: 'rn-mobx-start-kit'
     }
 
+    @observable right = {
+        city:'',
+        district:'',
+        weather:'',
+        temperature:''
+    }
+
     /**
      * @param {any} transmit 传递过来的参数
      */
     @action changeStore = (transmit) => {
         console.log(transmit)
         this.userInfo.userName = this.userInfo.userName.toLocaleUpperCase()
+    }
+
+    @action changeRight = (transmit) => {
+        this.right = transmit
     }
 }
 

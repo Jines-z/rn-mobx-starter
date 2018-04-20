@@ -5,11 +5,12 @@ import {
     View,
     Image
 } from 'react-native';
+import {observer} from 'mobx-react'
 import store from '../store'
 import Context from '../components/Context'
 import Props from '../components/Props'
 import HeaderLeft from '../components/HeaderLeft'
-import {observer} from 'mobx-react'
+import HeaderRight from '../components/HeaderRight'
 
 const home = require('../../../assets/home.png')
 const home_active = require('../../../assets/home_active.png')
@@ -19,7 +20,8 @@ export default class Home extends Component<{}> {
     static navigationOptions = ({ navigation, screenProps }) => ({
         headerTitleStyle: {
             fontSize: 30,
-            color: 'black'
+            color: 'black',
+            height:100
         },
         headerStyle: {
             backgroundColor: 'white',
@@ -27,6 +29,9 @@ export default class Home extends Component<{}> {
         },
         headerLeft:(
             <HeaderLeft />
+        ),
+        headerRight:(
+            <HeaderRight />
         ),
         tabBarIcon: (({tintColor, focused}) => {
             return (
