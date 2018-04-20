@@ -37,17 +37,20 @@ const styles = StyleSheet.create({
     day: {
         fontSize: 34,
         fontFamily:'DIN Alternate',
-        marginLeft:10
+        marginLeft:10,
+        color:'black'
     },
     month:{
         fontSize: 12,
         fontFamily:'Euphemia UCAS',
         marginLeft:5,
-        marginBottom:6
+        marginBottom:6,
+        color:'black'
     },
     year:{
         fontSize: 10,
         fontFamily:'Euphemia UCAS',
-        marginBottom:6
+        marginBottom:6,
+        color:'black'
     }
 })

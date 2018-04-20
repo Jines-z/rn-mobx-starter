@@ -18,11 +18,6 @@ const home_active = require('../../../assets/home_active.png')
 @observer
 export default class Home extends Component<{}> {
     static navigationOptions = ({ navigation, screenProps }) => ({
-        headerTitleStyle: {
-            fontSize: 30,
-            color: 'black',
-            height:100
-        },
         headerStyle: {
             backgroundColor: 'white',
             // borderBottomWidth:0

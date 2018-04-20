@@ -4,7 +4,7 @@ import {
     View,
     StyleSheet,
     Image,
-    Dimensions,
+    Dimensions
 } from 'react-native'
 import { packageVersion } from 'react-native-update'
 import Update from '../components/Update'
@@ -67,12 +67,14 @@ const styles = StyleSheet.create({
         shadowRadius:20
     },
     willLogin:{
-        alignSelf: "center"
+        alignSelf: "center",
+        backgroundColor:'white',
+        position:'absolute',
+        bottom:20
     },
     edition:{
         color:'gray',
         fontSize:12,
-        marginTop:10
     }
 
 })

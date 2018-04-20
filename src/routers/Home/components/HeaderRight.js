@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import {
     StyleSheet,
     Text,
-    View
+    View,
+    Platform
 } from 'react-native'
 import {observer} from 'mobx-react'
 
@@ -83,10 +84,10 @@ export default class HeaderRight extends Component <{}> {
         const {city,weather,temperature} = this.context.store.right
         return (
             <View style={styles.container}>
-                <Text style={styles.city}>{city}</Text>
+                <Text style={[styles.base]}>{city}</Text>
                 <IconE name='dot-single' color='gray'/>
-                <Text style={styles.weather}>{weather}</Text>
-                <Text style={styles.temperature}>{temperature}</Text>
+                <Text style={[styles.base]}>{weather}</Text>
+                <Text style={[styles.base,styles.temperature]}>{temperature}</Text>
                 <Icon name='temperature-celsius' size={12} style={styles.icon} color='gray'/>
             </View>
         )
@@ -97,34 +98,18 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection:'row',
         alignItems:'flex-end',
-        marginTop:12
+        marginTop:Platform.OS == "android" ? 20 : 12
     },
-    city: {
+    base:{
         fontSize: 11,
+        color:'gray',
         fontFamily:'Euphemia UCAS',
-        color:'gray'
-    },
-    district:{
-        fontSize: 11,
-        fontFamily:'Euphemia UCAS',
-        color:'gray'
-    },
-
-    weather:{
-        fontSize: 11,
-        fontFamily:'Euphemia UCAS',
-        color:'gray'
     },
     temperature:{
-        fontSize: 11,
-        fontFamily:'Euphemia UCAS',
-        color:'gray',
         marginLeft:5,
     },
     icon:{
         marginRight:6,
         fontWeight:'100'
-
     }
-
 })
