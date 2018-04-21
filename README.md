@@ -46,14 +46,8 @@
 ![NDK](./screenShorts/add_ndk.png)
 
 ### 配置NDK环境变量
+新建ANDROID_NDK_HOME，指向路径与下图相同，并在path中添加一遍。
 ![NDK](./screenShorts/path_ndk.png)
-
-### local.properties
-在`android`根目录新建`local.properties`文件，添加ndk路径`ndk.dir=C\:\\Users\\zheng\\AppData\\Local\\Android\\Sdk\\ndk-bundle`
-
-### 下载jar失败
-遇到类似下载失败的情况，复制网址下载，放到`C:\Users\zheng\AppData\Local\Android\Sdk\tools\lib`文件夹里边即可。
-![NDK](./screenShorts/jar_fail.png)
 
 开始拉代码吧，`git clone https://github.com/beverle-y/rn-mobx-starter.git`，然后打开手机的开发者模式，打开USB调试，插到电脑上面之后运行`adb devices`。
 
@@ -67,7 +61,7 @@ JRNJVOU899999999 device         # 真实设备
 
 ### No connected devices！
 检查是否正确连接手机并确认USB调试是否开启。
-![NDK](./screenShorts/jar_fail.png)
+![noconnect](./screenShorts/noconnect.png)
 
 ## Android 6.0及以上修改两个文件
 ~~~
@@ -102,11 +96,14 @@ clone完成以后进入项目文件夹`cd rn-mobx-starter`&&`yarn`等待下载..
 **如果你是小米手机**，去关闭`MIUI优化`，不然小米是不允许你将你的软件通过react-native run-android来安装到手机上的。
 
 **注意**：第一次运行`react-native run-android`到99%时，会卡住，这时手机底部会出现一个提示框，询问是否安装软件，点击确定即可。
-## Devices配置
+
 ### The development server returned response error code : 500
 将`babel-preset-react-native`版本太高，建议降至`babel-preset-react-native@4.0.0`
 ![develop](./screenShorts/develop.png)
 
+### 下载jar失败
+遇到类似下载失败的情况，复制网址下载，放到`C:\Users\zheng\AppData\Local\Android\Sdk\tools\lib`文件夹里边即可。
+![NDK](./screenShorts/jar_fail.png)
 
 ## 安卓打包Release.apk图片不显示
 在根目录下执行
