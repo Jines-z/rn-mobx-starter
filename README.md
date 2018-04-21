@@ -39,13 +39,13 @@
 
 配置开发环境需跳跃出那一道鸿沟，你懂得！推荐[lantern](https://github.com/getlantern/lantern)。
 
-### 增加SDK Tools
+### 增加SDK Tools (android)
 ![SDK_Tools](./screenShorts/add_tools.png)
 
-### 增加NDK
+### 增加NDK (android)
 ![NDK](./screenShorts/add_ndk.png)
 
-### 配置NDK环境变量
+### 配置NDK环境变量 (android)
 新建ANDROID_NDK_HOME，指向路径与下图相同，并在path中添加一遍。
 ![NDK](./screenShorts/path_ndk.png)
 
@@ -95,10 +95,10 @@ clone完成以后进入项目文件夹`cd rn-mobx-starter`&&`yarn`等待下载..
 
 **如果你是小米手机**，去关闭`MIUI优化`，不然小米是不允许你将你的软件通过react-native run-android来安装到手机上的。
 
-**注意**：第一次运行`react-native run-android`到99%时，会卡住，这时手机底部会出现一个提示框，询问是否安装软件，点击确定即可。
+**注意**：第一次运行`react-native run-android`到99%时，会卡住，这时手机底部会出现一个提示框，询问是否安装软件，点击确定即可。ios需要在设置 ->通用里信任一下。
 
 ### The development server returned response error code : 500
-将`babel-preset-react-native`版本太高，建议降至`babel-preset-react-native@4.0.0`
+`babel-preset-react-native`版本太高，建议降至`babel-preset-react-native@4.0.0`
 ![develop](./screenShorts/develop.png)
 
 ### 下载jar失败
