@@ -3,7 +3,8 @@ import {
     StyleSheet,
     Text,
     View,
-    Platform
+    Platform,
+    Alert
 } from 'react-native'
 import {observer} from 'mobx-react'
 
@@ -41,9 +42,12 @@ export default class HeaderRight extends Component <{}> {
                     key:'d692602fc4aa285121e4bde52aab5e22',
                     location:longitude+','+latitude
                 }
+                Alert.alert('位置',''+longitude+','+latitude)
                 Get(url,options,(responseBody)=>{
+                    Alert.alert('高德http：',''+responseBody)
                     if(responseBody.status ==1){
                         const {adcode,city,district} = responseBody.regeocode.addressComponent
+                        Alert.alert('位置',''+city)
                         let url = 'http://restapi.amap.com/v3/weather/weatherInfo?'
                         let options = {
                             key:'d692602fc4aa285121e4bde52aab5e22',
@@ -53,7 +57,6 @@ export default class HeaderRight extends Component <{}> {
                         }
                         Get(url,options,(res)=>{
                             if (res.status == 1) {
-                                console.log(res)
                                 const {weather,temperature} = res.lives[0]
                                 let tran = {
                                     city,
@@ -62,13 +65,12 @@ export default class HeaderRight extends Component <{}> {
                                     temperature
                                 }
                                 this.context.store.changeRight(tran)
-                                console.log(this.context.store)
                             }
                         })
                     }
                 })
             }).catch((errorMessage)=>{
-                console.log(errorMessage)
+                Alert.alert('获取ip失败'+errorMessage)
             })
         }
 
