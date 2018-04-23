@@ -1,5 +1,5 @@
-![rn-mobx-course](./logo.png)
-# rn-mobx-course
+![rn-mobx-starter](./logo.png)
+# rn-mobx-starter
 本项目致力于帮助`react-native`新手小白快速上手，不介绍[react](http://www.ruanyifeng.com/blog/2015/03/react.html)、[react-native](http://reactnative.cn/)和[ES6](http://blog.csdn.net/beverley__/article/details/78547973)语法。如果你具备`react`开发经验，写代码将不是问题，坑只在于开始的配置上边。
 
 ## 目录
@@ -125,9 +125,9 @@ react-native bundle --platform android --dev false --entry-file index.js --bundl
 1. `react-native start` ~~开一个本地服务器
 2. `react-native run-ios` ~~运行ios工程
 3. `react-native run-android` ~~运行android工程
-4. `react-native link` ~~将依赖的有原生代码的第三方组件连接到工程
-5. `npm install xxxx --save` ~~安装生产环境需要的依赖
-6. `npm install xxxx --save-dev` ~~安装开发环境需要的依赖
-7. `npm uninstall xxxx` ~~卸载某一个依赖
+4. `react-native link` ~~将含有原生代码的依赖连接到工程
+5. `npm install xxxx --save`或`yarn add xxxx` ~~安装生产环境需要的依赖
+6. `npm install xxxx --save-dev`或`yarn add xxxx -dev` ~~安装开发环境需要的依赖
+7. `npm uninstall xxxx`或`yarn remove xxxx` ~~卸载某一个依赖
 8. `rimraf node_nodules` ~~删除node_modules文件夹，也可以删除其他文件夹，推荐全局安装[gulp-rimraf](https://www.cnblogs.com/gulei/p/5407732.html)
 9. `cd android && ./gradlew assembleRelease` ~~[生成发行APK包](http://reactnative.cn/docs/0.45/signed-apk-android.html)
