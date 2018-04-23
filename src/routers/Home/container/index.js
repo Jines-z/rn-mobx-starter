@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {
     StyleSheet,
-    Text,
     View,
     Image,
     ScrollView
@@ -21,7 +20,8 @@ export default class Home extends Component<{}> {
         headerStyle: {
             backgroundColor: screenProps.themeColor,
             borderBottomWidth:1,
-            borderColor:'#F2F2F2',
+            borderBottomColor:'#F2F2F2',
+            borderColor:'#f2f2f2',
             elevation: 0
         },
         headerLeft:(
@@ -42,14 +42,6 @@ export default class Home extends Component<{}> {
         gesturesEnabled: true,
     })
     render() {
-        const {homeStore, changeText, completedHomeStore} = store
-        const propStore = {
-            homeStore,
-            completedHomeStore,
-            changeHomeStore(a) {
-                changeText(a)
-            }
-        }
         return (
             <View style={styles.container}>
                 <ScrollView>

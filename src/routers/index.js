@@ -49,6 +49,7 @@ const Tab = TabNavigator({
             height: Platform.OS == "android" ? 60 : 50,
             backgroundColor: 'white',
             borderBottomWidth:1,
+            borderBottomColor:'#E8E8E8',
             borderColor:'#E8E8E8',
             elevation: 1
         }, // tabbar的样式。
