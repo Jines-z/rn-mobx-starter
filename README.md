@@ -126,8 +126,8 @@ react-native bundle --platform android --dev false --entry-file index.js --bundl
 2. `react-native run-ios` ~~运行ios工程
 3. `react-native run-android` ~~运行android工程
 4. `react-native link` ~~将含有原生代码的依赖连接到工程
-5. `npm install xxxx --save`或`yarn add xxxx` ~~安装生产环境需要的依赖
-6. `npm install xxxx --save-dev`或`yarn add xxxx -dev` ~~安装开发环境需要的依赖
-7. `npm uninstall xxxx`或`yarn remove xxxx` ~~卸载某一个依赖
+5. `npm install xxxx --save` 或 `yarn add xxxx` ~~安装生产环境需要的依赖
+6. `npm install xxxx --save-dev` 或 `yarn add xxxx -dev` ~~安装开发环境需要的依赖
+7. `npm uninstall xxxx` 或 `yarn remove xxxx` ~~卸载某一个依赖
 8. `rimraf node_nodules` ~~删除node_modules文件夹，也可以删除其他文件夹，推荐全局安装[gulp-rimraf](https://www.cnblogs.com/gulei/p/5407732.html)
 9. `cd android && ./gradlew assembleRelease` ~~[生成发行APK包](http://reactnative.cn/docs/0.45/signed-apk-android.html)
