@@ -7,7 +7,6 @@ import {
 } from 'react-native';
 import {observer} from 'mobx-react'
 import store from '../store'
-import Context from '../components/Context'
 import Props from '../components/Props'
 import HeaderLeft from '../components/HeaderLeft'
 import HeaderRight from '../components/HeaderRight'
@@ -19,8 +18,10 @@ const home_active = require('../../../assets/home_active.png')
 export default class Home extends Component<{}> {
     static navigationOptions = ({ navigation, screenProps }) => ({
         headerStyle: {
-            backgroundColor: 'white',
-            // borderBottomWidth:0
+            backgroundColor: screenProps.themeColor,
+            borderBottomWidth:1,
+            borderColor:'#F2F2F2',
+            elevation: 0
         },
         headerLeft:(
             <HeaderLeft />
@@ -50,7 +51,6 @@ export default class Home extends Component<{}> {
         }
         return (
             <View style={styles.container}>
-                <Context></Context>
                 <Props {...propStore}></Props>
                 <View style={{flex: 1, flexDirection: 'row', alignItems: 'flex-end'}}>
                     <Text style={styles.bottom} onPress={() => {this.props.navigation.navigate('Mine')}}>

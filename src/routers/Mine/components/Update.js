@@ -16,7 +16,6 @@ import {
 } from 'react-native-update'
 import Button from 'apsl-react-native-button'
 
-
 let appKey = ''
 if (Platform.OS == "android") {
     appKey = 'CLLwkMd2peUEyvKtYpwIMrcHtQZLsnrj'
@@ -27,10 +26,7 @@ if (Platform.OS == "android") {
 export default class Update extends Component<{}> {
     componentWillMount(){
         if (isFirstTime) {
-            Alert.alert('提示', '这是当前版本第一次启动,是否要模拟启动失败?失败将回滚到上一版本', [
-                {text: '是', onPress: ()=>{throw new Error('模拟启动失败,请重启应用')}},
-                {text: '否', onPress: ()=>{markSuccess()}},
-            ])
+            markSuccess()
         } else if (isRolledBack) {
             Alert.alert('提示', '刚刚更新失败了,版本被回滚.')
         }
@@ -46,7 +42,7 @@ export default class Update extends Component<{}> {
             Alert.alert('提示', '更新失败.')
         })
     }
-    checkUpdate = () => {
+    check = () => {
         checkUpdate(appKey).then(info => {
             if (info.expired) {
                 Alert.alert('提示', '您的应用版本已更新,请前往应用商店下载新的版本', [
@@ -69,7 +65,7 @@ export default class Update extends Component<{}> {
             <Button
                 style={styles.btnContainer}
                 textStyle={styles.btnText}
-                onPress={this.checkUpdate}
+                onPress={this.check}
             >
                 UPDATE
             </Button>
@@ -85,7 +81,8 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         transform:[
             {translateY:-200}
-        ]
+        ],
+        overflow:'hidden'
     },
     btnText: {
         fontSize: 20,

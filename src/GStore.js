@@ -23,7 +23,7 @@
 import {observable, useStrict, action} from 'mobx'
 useStrict(true)
 
-class ContextStore {
+class GStore {
 
     @observable userInfo = {
         userName: 'rn-mobx-start-kit'
@@ -49,4 +49,4 @@ class ContextStore {
     }
 }
 
-export default new ContextStore()
+export default new GStore()

@@ -5,17 +5,17 @@ import {
     View
 } from 'react-native'
 export default class HeaderLeft extends Component <{}> {
-    shouldComponentUpdate(nextProps){
-        if (this.props == nextProps) {
-            return false
-        }
-    }
     getDateArr = () =>{
         let dateArr = new Date().toDateString().split(' ')
         return {
             year:dateArr[3],
             month:dateArr[1],
             day:dateArr[2]
+        }
+    }
+    shouldComponentUpdate(nextProps){
+        if (this.props == nextProps) {
+            return false
         }
     }
     render(){

@@ -4,7 +4,6 @@ import {
     View,
     Image
 } from 'react-native'
-import store from '../Home/store'
 import { observer } from 'mobx-react'
 const all = require('../../assets/all.png')
 const all_active = require('../../assets/all_active.png')
@@ -13,7 +12,7 @@ const all_active = require('../../assets/all_active.png')
 export default class All extends Component<{}> {
     static navigationOptions = ({ navigation, screenProps }) => ({
         headerTitle: 'All',
-        headerStyle: {backgroundColor: 'white'},
+        headerStyle: {backgroundColor: screenProps.themeColor},
         headerTitleStyle: {
             fontSize: 30,
             color: 'black'
@@ -31,12 +30,10 @@ export default class All extends Component<{}> {
         tabBarLabel: 'All',
     })
     render() {
-        const {homeStore} = store
-        const text = `这是从home组件中取过来的store：“${homeStore}”`
         return (
             <View>
                 <Text>
-                    {text}
+                    All
                 </Text>
             </View>
         )

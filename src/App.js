@@ -28,10 +28,9 @@
    ====================================================== */
 
 import React, {Component} from 'react'
-import { observer } from 'mobx-react'
+import { observer,Provider } from 'mobx-react'
 import SplashScreen from 'rn-splash-screen'
-import Provider from './provider'
-import contextStore from './contextStore'
+import GStore from './GStore'
 import Routers from './routers'
 
 @observer
@@ -39,11 +38,11 @@ export default class App extends Component<{}> {
     componentDidMount() {
         setTimeout(() => {
             SplashScreen.hide()
-        }, 1000);
+        }, 200);
     }
     render() {
         return (
-            <Provider store={contextStore}>
+            <Provider GStore={GStore}>
                 <Routers screenProps={{themeColor:'white'}}/>
             </Provider>
         )

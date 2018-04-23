@@ -6,18 +6,16 @@ import {
     Platform,
     Alert
 } from 'react-native'
-import {observer} from 'mobx-react'
+import {observer,inject} from 'mobx-react'
 
-import PropTypes from 'prop-types'
-import Icon from 'react-native-vector-icons/dist/MaterialCommunityIcons'
+import IconM from 'react-native-vector-icons/dist/MaterialCommunityIcons'
 import IconE from 'react-native-vector-icons/dist/Entypo'
+import SmallLoader from '../components/SmallLoader'
 import Get from '../../../service/Get'
 
+@inject('GStore')
 @observer
 export default class HeaderRight extends Component <{}> {
-    static contextTypes = {
-        store: PropTypes.object
-    }
     getLocation = () =>{
         return new Promise ((resolve, reject)=>{
             navigator.geolocation.getCurrentPosition((position)=>{
@@ -33,7 +31,7 @@ export default class HeaderRight extends Component <{}> {
         })
     }
     componentDidMount(){
-        const {right} = this.context.store
+        const {right} = this.props.GStore
         if (right.city == '') {
             this.getLocation().then((coords)=>{
                 const {longitude,latitude} = coords
@@ -64,7 +62,7 @@ export default class HeaderRight extends Component <{}> {
                                     weather,
                                     temperature
                                 }
-                                this.context.store.changeRight(tran)
+                                this.props.GStore.changeRight(tran)
                             }
                         })
                     }
@@ -83,14 +81,20 @@ export default class HeaderRight extends Component <{}> {
         }
     }
     render(){
-        const {city,weather,temperature} = this.context.store.right
+        const {city,weather,temperature} = this.props.GStore.right
         return (
             <View style={styles.container}>
-                <Text style={[styles.base]}>{city}</Text>
-                <IconE name='dot-single' color='gray'/>
-                <Text style={[styles.base]}>{weather}</Text>
-                <Text style={[styles.base,styles.temperature]}>{temperature}</Text>
-                <Icon name='temperature-celsius' size={12} style={styles.icon} color='gray'/>
+                {city == '' ?
+                    <SmallLoader />
+                    :
+                    <View style={styles.textContainer}>
+                        <Text style={[styles.base]}>{city}</Text>
+                        <IconE name='dot-single' color='gray'/>
+                        <Text style={[styles.base]}>{weather}</Text>
+                        <Text style={[styles.base,styles.temperature]}>{temperature}</Text>
+                        <IconM name='temperature-celsius' size={12} style={styles.icon} color='gray'/>
+                    </View>
+                }
             </View>
         )
     }
@@ -100,18 +104,23 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection:'row',
         alignItems:'flex-end',
+        paddingRight:6,
         marginTop:Platform.OS == "android" ? 20 : 12
+    },
+    textContainer:{
+        flex: 1,
+        flexDirection:'row',
+        alignItems:'flex-end'
     },
     base:{
         fontSize: 11,
         color:'gray',
-        fontFamily:'Euphemia UCAS',
+        fontFamily:'Euphemia UCAS'
     },
     temperature:{
         marginLeft:5,
     },
     icon:{
-        marginRight:6,
         fontWeight:'100'
     }
 })
