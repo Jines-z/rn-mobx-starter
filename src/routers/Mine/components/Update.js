@@ -4,6 +4,9 @@ import {
     Platform,
     Linking,
     Alert,
+    Dimensions,
+    Text,
+    TouchableOpacity
 } from 'react-native'
 import {
     isFirstTime,
@@ -12,9 +15,9 @@ import {
     downloadUpdate,
     switchVersion,
     switchVersionLater,
-    markSuccess,
+    markSuccess
 } from 'react-native-update'
-import Button from 'apsl-react-native-button'
+const { height } = Dimensions.get('window')
 
 let appKey = ''
 if (Platform.OS == "android") {
@@ -62,25 +65,25 @@ export default class Update extends Component<{}> {
     }
     render() {
         return (
-            <Button
-                style={styles.btnContainer}
-                textStyle={styles.btnText}
-                onPress={this.check}
-            >
-                UPDATE
-            </Button>
+            <TouchableOpacity style={styles.btnContainer} activeOpacity={0.7} onPress={this.check}>
+                <Text style={styles.btnText}>UPDATE</Text>
+            </TouchableOpacity>
         )
     }
 }
 const styles = StyleSheet.create({
     btnContainer:{
+        flex:1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        alignSelf: "center",
         width:100,
         height:100,
         borderRadius:100,
         backgroundColor: 'black',
-        alignSelf: "center",
         position:'absolute',
-        top:250,
+        top:(730*height)/750*0.4,
         overflow:'hidden'
     },
     btnText: {
