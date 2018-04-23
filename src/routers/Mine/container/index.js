@@ -4,7 +4,8 @@ import {
     View,
     StyleSheet,
     Image,
-    Dimensions
+    Dimensions,
+    Platform
 } from 'react-native'
 import { packageVersion } from 'react-native-update'
 import Update from '../components/Update'
@@ -33,7 +34,7 @@ export default class Mine extends Component<{}> {
         return (
             <View style={styles.container}>
                 <Image source={ground} style={styles.ground} />
-                <View style={styles.shadow} />
+                <View style={Platform.OS == 'android' ? styles.shadowAndroid : styles.shadowIos} />
                 <Update />
                 <View style={styles.willLogin}>
                     <Text style={styles.edition}>版本号: {packageVersion}</Text>
@@ -51,7 +52,12 @@ const styles = StyleSheet.create({
         width:width,
         height:(730*width)/750
     },
-    shadow:{
+    shadowAndroid:{
+        width:width,
+        flex:1,
+        backgroundColor:'rgb(244,243,247)'
+    },
+    shadowIos:{
         width:width,
         height:100,
         transform: [
@@ -68,7 +74,6 @@ const styles = StyleSheet.create({
     },
     willLogin:{
         alignSelf: "center",
-        backgroundColor:'white',
         position:'absolute',
         bottom:20
     },

@@ -3,13 +3,14 @@ import {
     StyleSheet,
     Text,
     View,
-    Image
+    Image,
+    ScrollView
 } from 'react-native';
 import {observer} from 'mobx-react'
 import store from '../store'
-import Props from '../components/Props'
 import HeaderLeft from '../components/HeaderLeft'
 import HeaderRight from '../components/HeaderRight'
+import Paragraph from '../components/Paragraph'
 
 const home = require('../../../assets/home.png')
 const home_active = require('../../../assets/home_active.png')
@@ -51,12 +52,9 @@ export default class Home extends Component<{}> {
         }
         return (
             <View style={styles.container}>
-                <Props {...propStore}></Props>
-                <View style={{flex: 1, flexDirection: 'row', alignItems: 'flex-end'}}>
-                    <Text style={styles.bottom} onPress={() => {this.props.navigation.navigate('Mine')}}>
-                        点我跳转到Mine
-                    </Text>
-                </View>
+                <ScrollView>
+                    <Paragraph></Paragraph>
+                </ScrollView>
             </View>
         )
     }
@@ -64,8 +62,7 @@ export default class Home extends Component<{}> {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor:'white'
+        flex: 1
     },
     bottom: {
         marginBottom: 30

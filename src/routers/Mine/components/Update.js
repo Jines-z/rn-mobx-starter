@@ -79,9 +79,8 @@ const styles = StyleSheet.create({
         borderRadius:100,
         backgroundColor: 'black',
         alignSelf: "center",
-        transform:[
-            {translateY:-200}
-        ],
+        position:'absolute',
+        top:250,
         overflow:'hidden'
     },
     btnText: {
