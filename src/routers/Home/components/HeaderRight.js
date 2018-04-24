@@ -35,17 +35,16 @@ export default class HeaderRight extends Component <{}> {
         if (right.city == '') {
             this.getLocation().then((coords)=>{
                 const {longitude,latitude} = coords
+                // let longitude = '30'
+                // let latitude = '120'
                 let url = 'http://restapi.amap.com/v3/geocode/regeo?'
                 let options = {
                     key:'d692602fc4aa285121e4bde52aab5e22',
                     location:longitude+','+latitude
                 }
-                Alert.alert('位置',''+longitude+','+latitude)
                 Get(url,options,(responseBody)=>{
-                    Alert.alert('高德http：',''+responseBody)
                     if(responseBody.status ==1){
                         const {adcode,city,district} = responseBody.regeocode.addressComponent
-                        Alert.alert('位置',''+city)
                         let url = 'http://restapi.amap.com/v3/weather/weatherInfo?'
                         let options = {
                             key:'d692602fc4aa285121e4bde52aab5e22',

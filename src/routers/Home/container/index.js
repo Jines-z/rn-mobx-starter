@@ -4,7 +4,7 @@ import {
     View,
     Image,
     ScrollView
-} from 'react-native';
+} from 'react-native'
 import {observer} from 'mobx-react'
 import store from '../store'
 import HeaderLeft from '../components/HeaderLeft'
@@ -20,7 +20,7 @@ export default class Home extends Component<{}> {
         headerStyle: {
             backgroundColor: screenProps.themeColor,
             borderBottomWidth:1,
-            borderBottomColor:'#F2F2F2',
+            borderBottomColor:'#f2f2f2',
             borderColor:'#f2f2f2',
             elevation: 0
         },

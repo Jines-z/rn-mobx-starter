@@ -7,29 +7,33 @@ import {
     Dimensions,
     TouchableOpacity
 } from 'react-native'
-const { width } = Dimensions.get('window')
+import {inject} from 'mobx-react'
+const {width} = Dimensions.get('window')
 import data from '../data'
 
+@inject('GStore')
 export default class Paragraph extends Component <{}> {
     shouldComponentUpdate(nextProps){
-        if (this.props == nextProps) {
+        if (this.props == nextProps || this.props != nextProps) {
             return false
+        } else {
+            return true
         }
     }
-    pressImage = (image) =>{
-        console.log(image)
+    pressImage = (item) =>{
+        this.props.GStore.changeList(item)
     }
     render(){
         return (
             <View style={styles.container}>
                 {data.map((item,i)=>
                     <View key={i} style={styles.wrap}>
-                        <TouchableOpacity activeOpacity={1} onPress={e=>this.pressImage(item.image)}>
+                        <TouchableOpacity activeOpacity={1} onPress={e=>this.pressImage(item)}>
                             <Image source={item.image} style={styles.image}/>
                         </TouchableOpacity>
                         <Text style={styles.photographer}>摄影丨{item.photographer}</Text>
                         <View style={styles.content}>
-                            <Text style={styles.text}>{item.content}</Text>
+                            <Text style={styles.text} >{item.content}</Text>
                         </View>
                         <Text style={styles.author}>{item.author}</Text>
                     </View>

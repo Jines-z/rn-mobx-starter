@@ -51,7 +51,8 @@ const Tab = TabNavigator({
             borderBottomWidth:1,
             borderBottomColor:'#E8E8E8',
             borderColor:'#E8E8E8',
-            elevation: 1
+            elevation: 1,
+            paddingTop:Platform.OS == "android" ? 0 : 5
         }, // tabbar的样式。
         labelStyle: {
             fontSize: 12

@@ -28,7 +28,7 @@
    ====================================================== */
 
 import React, {Component} from 'react'
-import { observer,Provider } from 'mobx-react'
+import {observer,Provider} from 'mobx-react'
 import SplashScreen from 'rn-splash-screen'
 import GStore from './GStore'
 import Routers from './routers'

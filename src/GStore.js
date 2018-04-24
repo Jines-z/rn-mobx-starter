@@ -26,28 +26,35 @@ import {observable, useStrict, action} from 'mobx'
 useStrict(true)
 
 class GStore {
-
-    @observable userInfo = {
-        userName: 'rn-mobx-start-kit'
-    }
-
     @observable right = {
         city:'',
         district:'',
         weather:'',
         temperature:''
     }
-
-    /**
-     * @param {any} transmit 传递过来的参数
-     */
-    @action changeStore = (transmit) => {
-        console.log(transmit)
-        this.userInfo.userName = this.userInfo.userName.toLocaleUpperCase()
-    }
+    @observable list = []
 
     @action changeRight = (transmit) => {
         this.right = transmit
+    }
+    @action changeList = (item) =>{
+        const check = (item) =>{
+            let checkHas = false
+            for (let i = 0;i < this.list.length;i++) {
+                if (this.list[i].id == item.id) {
+                    checkHas = true
+                }
+            }
+            return checkHas
+        }
+        if (this.list.length == 0) {
+            this.list.push(item)
+        } else {
+            if (!check(item)) {
+                this.list.push(item)
+            }
+        }
+
     }
 }
 
