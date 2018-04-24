@@ -65,7 +65,7 @@ export default class Update extends Component<{}> {
     }
     render() {
         return (
-            <TouchableOpacity style={styles.btnContainer} activeOpacity={0.7} onPress={this.check}>
+            <TouchableOpacity style={styles.btnContainer} activeOpacity={0.85} onPress={this.check}>
                 <Text style={styles.btnText}>UPDATE</Text>
             </TouchableOpacity>
         )

@@ -9,6 +9,7 @@ import {
 } from 'react-native'
 const { width } = Dimensions.get('window')
 import data from '../data'
+
 export default class Paragraph extends Component <{}> {
     shouldComponentUpdate(nextProps){
         if (this.props == nextProps) {

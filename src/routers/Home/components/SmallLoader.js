@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {
-    StyleSheet,
     Animated,
     Easing
 } from 'react-native'
@@ -44,6 +43,3 @@ export default class SmallLoader extends Component <{}> {
         )
     }
 }
-const styles = StyleSheet.create({
-
-})
