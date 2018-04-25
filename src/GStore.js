@@ -22,7 +22,7 @@
 
    ====================================================== */
 
-import {observable, useStrict, action} from 'mobx'
+import {observable, useStrict, action, computed} from 'mobx'
 useStrict(true)
 
 class GStore {
@@ -55,6 +55,16 @@ class GStore {
             }
         }
 
+    }
+    @action delete = (id) =>{
+        for (let i = 0;i < this.list.length;i++) {
+            if (this.list[i].id == id) {
+                this.list.splice(i,1)
+            }
+        }
+    }
+    @computed get showLoader() {
+        return this.right.city == ''
     }
 }
 

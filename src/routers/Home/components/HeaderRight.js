@@ -7,7 +7,6 @@ import {
     Alert
 } from 'react-native'
 import {observer,inject} from 'mobx-react'
-
 import IconM from 'react-native-vector-icons/dist/MaterialCommunityIcons'
 import IconE from 'react-native-vector-icons/dist/Entypo'
 import SmallLoader from '../components/SmallLoader'
@@ -67,7 +66,7 @@ export default class HeaderRight extends Component <{}> {
                     }
                 })
             }).catch((errorMessage)=>{
-                Alert.alert('获取ip失败'+errorMessage)
+                Alert.alert('获取ip失败',errorMessage)
             })
         }
 
@@ -80,10 +79,10 @@ export default class HeaderRight extends Component <{}> {
         }
     }
     render(){
-        const {city,weather,temperature} = this.props.GStore.right
+        const {city,weather,temperature,showLoader} = this.props.GStore.right
         return (
             <View style={styles.container}>
-                {city == '' ?
+                {showLoader ?
                     <SmallLoader />
                     :
                     <View style={styles.textContainer}>
