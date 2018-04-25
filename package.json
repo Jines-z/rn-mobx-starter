@@ -1,8 +1,15 @@
 {
   "name": "MobxRN",
-  "version": "1.0",
+  "version": "1.0.1",
   "private": true,
   "author": "bevelery",
+  "description": "史上最全rn入门教程，附一个demo",
+  "license": "MIT",
+  "keywords": "react-native mobx starter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beverle-y/rn-mobx-starter"
+  },
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
