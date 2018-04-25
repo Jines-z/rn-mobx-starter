@@ -108,9 +108,9 @@ android {
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
-        versionName "2.0"
+        versionName "1.0"
         ndk {
-            abiFilters "arm64-v8a", "armeabi-v7a", "armeabi", "x86"
+            abiFilters "armeabi-v7a", "x86"
         }
     }
     signingConfigs {
@@ -153,8 +153,8 @@ android {
 
 dependencies {
     compile project(':react-native-update')
-    compile project(':rn-splash-screen')
     compile project(':react-native-vector-icons')
+    compile project(':rn-splash-screen')
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"  // From node_modules

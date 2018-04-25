@@ -39,6 +39,7 @@ yarn-error.log
 # BUCK
 buck-out/
 \.buckd/
+*.keystore
 
 # fastlane
 #
@@ -51,4 +52,8 @@ buck-out/
 */fastlane/Preview.html
 */fastlane/screenshots
 
+# Bundle artifact
+*.jsbundle
+
 .update
+

@@ -8,7 +8,7 @@
  */
 
 #import "AppDelegate.h"
-#import "RCTHotUpdate.h"
+#import "RCTHotUpdate/RCTHotUpdate.h"
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>

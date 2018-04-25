@@ -4,14 +4,12 @@ import android.app.Application;
 
 import com.facebook.react.ReactApplication;
 import cn.reactnative.modules.update.UpdatePackage;
-import com.mehcode.reactnative.splashscreen.SplashScreenPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
+import com.mehcode.reactnative.splashscreen.SplashScreenPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-
-import cn.reactnative.modules.update.UpdateContext;
 
 import java.util.Arrays;
 import java.util.List;
@@ -25,18 +23,12 @@ public class MainApplication extends Application implements ReactApplication {
     }
 
     @Override
-    protected String getJSBundleFile() {
-        return UpdateContext.getBundleUrl(MainApplication.this);
-    }
-
-
-    @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
             new UpdatePackage(),
-            new SplashScreenPackage(),
-            new VectorIconsPackage()
+            new VectorIconsPackage(),
+            new SplashScreenPackage()
       );
     }
 

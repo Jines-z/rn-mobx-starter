@@ -22,8 +22,8 @@
 
    ====================================================== */
 
-import {observable, useStrict, action, computed} from 'mobx'
-useStrict(true)
+import {observable, configure, action, computed} from 'mobx'
+configure({enforceActions:true})
 
 class GStore {
     @observable right = {

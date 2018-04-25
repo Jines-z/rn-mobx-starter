@@ -1,9 +1,9 @@
 package com.mobxrn;
 
 import com.facebook.react.ReactActivity;
+
 import android.graphics.Color;
 import android.os.Bundle;
-
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.bridge.ReactContext;
 import com.mehcode.reactnative.splashscreen.SplashScreen;
@@ -18,6 +18,7 @@ public class MainActivity extends ReactActivity {
     protected String getMainComponentName() {
         return "MobxRN";
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         SplashScreen.show(this, getReactInstanceManager());

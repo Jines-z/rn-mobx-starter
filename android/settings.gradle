@@ -1,9 +1,9 @@
 rootProject.name = 'MobxRN'
 include ':react-native-update'
 project(':react-native-update').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-update/android')
-include ':rn-splash-screen'
-project(':rn-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/rn-splash-screen/android')
 include ':react-native-vector-icons'
 project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
+include ':rn-splash-screen'
+project(':rn-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/rn-splash-screen/android')
 
 include ':app'
