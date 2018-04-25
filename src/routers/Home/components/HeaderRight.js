@@ -79,7 +79,8 @@ export default class HeaderRight extends Component <{}> {
         }
     }
     render(){
-        const {city,weather,temperature,showLoader} = this.props.GStore.right
+        const {city,weather,temperature} = this.props.GStore.right
+        const {showLoader} = this.props.GStore
         return (
             <View style={styles.container}>
                 {showLoader ?

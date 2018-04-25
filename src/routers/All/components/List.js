@@ -7,7 +7,6 @@ import {
     StyleSheet
 } from 'react-native'
 import {observer, inject} from 'mobx-react'
-import Swipeout from 'react-native-swipeout'
 
 @inject('GStore')
 @observer
@@ -24,31 +23,20 @@ export default class List extends Component<{}> {
     }
     render() {
         const {list} = this.props.GStore
-        const rightProps = (item) =>{
-            return {
-                text:'删除',
-                type:'delete',
-                onPress:()=>{
-                    this.delete(item.id)
-                }
-            }
-        }
         return (
             <View style={styles.container}>
                 {list.map((item,i)=>
-                    <Swipeout right={[rightProps(item)]} dev={true} backgroundColor='rgb(239,239,244)' key={i}>
-                        <View style={styles.row}>
-                            <View style={styles.content}>
-                                <View style={styles.left}>
-                                    <Image source={item.image} style={styles.image} />
-                                </View>
-                                <View style={styles.right}>
-                                    <Text style={styles.text} numberOfLines={1}>{item.content}</Text>
-                                    <Text style={styles.photographer}>{item.photographer}</Text>
-                                </View>
+                    <View style={styles.row} key={i}>
+                        <View style={styles.content}>
+                            <View style={styles.left}>
+                                <Image source={item.image} style={styles.image} />
+                            </View>
+                            <View style={styles.right}>
+                                <Text style={styles.text} numberOfLines={1}>{item.content}</Text>
+                                <Text style={styles.photographer}>{item.photographer}</Text>
                             </View>
                         </View>
-                    </Swipeout>
+                    </View>
                 )}
             </View>
         )
