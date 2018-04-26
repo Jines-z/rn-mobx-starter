@@ -28,6 +28,7 @@
    ====================================================== */
 
 import React, { Component } from 'react'
+// import { Platform, ToastAndroid, BackHandler } from 'react-native'
 import { observer, Provider } from 'mobx-react'
 import SplashScreen from 'rn-splash-screen'
 import GStore from './GStore'

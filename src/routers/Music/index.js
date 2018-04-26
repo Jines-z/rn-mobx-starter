@@ -15,7 +15,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Video from 'react-native-video'
 import Modal from 'react-native-modalbox'
-import LoadingSpinner from '../../components/loadingSpinner'
+import ScreenLoader from '../../components/ScreenLoader'
 
 let deviceWidth = Dimensions.get('window').width
 
@@ -84,7 +84,6 @@ export default class Music extends Component {
                     songDS: this.state.songDS.cloneWithRows(songs),
                     songs: songs,
                     currentSong: songs[0],
-
                 })
             })
     }
@@ -115,13 +114,13 @@ export default class Music extends Component {
     }
 
     render() {
-
-        if (!this.state.currentSong.name) return <LoadingSpinner animating={true} />
+        console.log(this.state.currentSong)
+        if (!this.state.currentSong.name) return <ScreenLoader />
         return (
             <View style={styles.container}>
                 { this.state.songs.length != 0 ?
                     <Video
-                        source={{uri: this.state.currentSong.mp3Url}}   // Can be a URL or a local file.
+                        source={{uri:'http://m10.music.126.net/20180426165736/13167d3f8df3372dec9cd640ca81c8cf/ymusic/97bf/77fc/0815/79f1d605ab6f8f1e54dac7ea54536f3a.mp3'}}   // Can be a URL or a local file.
                         ref='video'                           // Store reference
                         rate={1.0}                     // 0 is paused, 1 is normal.
                         volume={1.0}                   // 0 is muted, 1 is normal.

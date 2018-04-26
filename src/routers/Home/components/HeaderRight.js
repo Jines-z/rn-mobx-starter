@@ -9,7 +9,7 @@ import {
 import { observer,inject } from 'mobx-react'
 import IconM from 'react-native-vector-icons/dist/MaterialCommunityIcons'
 import IconE from 'react-native-vector-icons/dist/Entypo'
-import SmallLoader from '../components/SmallLoader'
+import SmallLoader from '../../../components/SmallLoader'
 import Get from '../../../service/Get'
 
 @inject('GStore')

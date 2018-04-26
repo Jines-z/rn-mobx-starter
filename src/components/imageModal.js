@@ -16,7 +16,7 @@ import {
 
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-import LoadingSpinner from './loadingSpinner'
+import LoadingSpinner from './ScreenLoader'
 
 let deviceWidth = Dimensions.get('window').width
 let deviceHeight = Dimensions.get('window').height
