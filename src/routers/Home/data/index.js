@@ -5,8 +5,15 @@ const img0547 = require('../../../assets/0547.png')
 const img0548 = require('../../../assets/0548.png')
 const img0549 = require('../../../assets/0549.png')
 const img0550 = require('../../../assets/0550.png')
+const img0552 = require('../../../assets/0552.png')
 export default [
     {
+        id:552,
+        image:img0552,
+        photographer:'王小洋',
+        content:'一无所有来，一无所有走，中间的过程里，说“失去”都是太抬举自己了，借来的，还回去，摊开手心，握紧拳头。',
+        author:'春夏'
+    },{
         id:540,
         image:img0540,
         photographer:'Satwik Arora',
