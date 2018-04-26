@@ -10,7 +10,7 @@ import {
 import { inject } from 'mobx-react'
 import { withNavigation } from 'react-navigation'
 const { width } = Dimensions.get('window')
-import data from '../data'
+import data from '../../../data'
 
 @withNavigation
 @inject('GStore')
@@ -23,7 +23,10 @@ export default class Paragraph extends Component <{}> {
         }
     }
     pressImage = (item) =>{
+        const { music, album, url } = item
+        const musicMessage = { music, album, url }
         this.props.GStore.changeList(item)
+        this.props.GStore.changeMusic(musicMessage)
         this.props.navigation.navigate('Music')
     }
     render(){

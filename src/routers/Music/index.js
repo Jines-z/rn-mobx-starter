@@ -11,7 +11,7 @@ import {
     Platform,
     ToastAndroid
 } from 'react-native'
-
+import { inject } from 'mobx-react'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Video from 'react-native-video'
 import Modal from 'react-native-modalbox'
@@ -52,6 +52,7 @@ const SongItem = ({ data, rowID, t }) => {
     )
 }
 
+@inject('GStore')
 export default class Music extends Component {
 
     constructor() {
@@ -120,7 +121,7 @@ export default class Music extends Component {
             <View style={styles.container}>
                 { this.state.songs.length != 0 ?
                     <Video
-                        source={{uri:'http://m10.music.126.net/20180426165736/13167d3f8df3372dec9cd640ca81c8cf/ymusic/97bf/77fc/0815/79f1d605ab6f8f1e54dac7ea54536f3a.mp3'}}   // Can be a URL or a local file.
+                        source={{url:this.props.GStore.musicMessage.url}}   // Can be a URL or a local file.
                         ref='video'                           // Store reference
                         rate={1.0}                     // 0 is paused, 1 is normal.
                         volume={1.0}                   // 0 is muted, 1 is normal.

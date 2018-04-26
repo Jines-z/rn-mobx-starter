@@ -33,6 +33,11 @@ class GStore {
         temperature: ''
     }
     @observable list = []
+    @observable musicMessage = {
+        music:'',
+        album:null,
+        url:''
+    }
 
     @action changeRight = (transmit) => {
         this.right = transmit
@@ -54,6 +59,10 @@ class GStore {
                 this.list.push(item)
             }
         }
+
+    }
+    @action changeMusic = (transmit) =>{
+        this.musicMessage = transmit
 
     }
     @action delete = (id) => {
