@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import {
     Text,
     View,
@@ -6,7 +6,7 @@ import {
     Platform,
     StyleSheet
 } from 'react-native'
-import {observer, inject} from 'mobx-react'
+import { observer, inject } from 'mobx-react'
 
 @inject('GStore')
 @observer

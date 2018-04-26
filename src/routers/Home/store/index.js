@@ -1,4 +1,4 @@
-import {observable, configure, action, computed} from 'mobx'
+import { observable, configure, action, computed } from 'mobx'
 configure({enforceActions:true})
 
 class Store {

@@ -1,12 +1,11 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {
     StyleSheet,
     Text,
     View,
-    Image,
     Dimensions
 } from 'react-native'
-const {height} = Dimensions.get('window')
+const { height } = Dimensions.get('window')
 import IconM from 'react-native-vector-icons/dist/MaterialIcons'
 
 const NoListen = () =>{

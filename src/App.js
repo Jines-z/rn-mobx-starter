@@ -27,8 +27,8 @@
 
    ====================================================== */
 
-import React, {Component} from 'react'
-import {observer,Provider} from 'mobx-react'
+import React, { Component } from 'react'
+import { observer, Provider } from 'mobx-react'
 import SplashScreen from 'rn-splash-screen'
 import GStore from './GStore'
 import Routers from './routers'
@@ -40,10 +40,11 @@ export default class App extends Component<{}> {
             SplashScreen.hide()
         }, 200);
     }
+
     render() {
         return (
             <Provider GStore={GStore}>
-                <Routers screenProps={{themeColor:'white'}}/>
+                <Routers screenProps={{themeColor: 'white'}}/>
             </Provider>
         )
     }

@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import {
     StyleSheet,
     Text,
@@ -7,10 +7,12 @@ import {
     Dimensions,
     TouchableOpacity
 } from 'react-native'
-import {inject} from 'mobx-react'
-const {width} = Dimensions.get('window')
+import { inject } from 'mobx-react'
+import { withNavigation } from 'react-navigation'
+const { width } = Dimensions.get('window')
 import data from '../data'
 
+@withNavigation
 @inject('GStore')
 export default class Paragraph extends Component <{}> {
     shouldComponentUpdate(nextProps){
@@ -22,6 +24,7 @@ export default class Paragraph extends Component <{}> {
     }
     pressImage = (item) =>{
         this.props.GStore.changeList(item)
+        this.props.navigation.navigate('Music')
     }
     render(){
         return (

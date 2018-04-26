@@ -3,6 +3,7 @@ package com.mobxrn;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.brentvatne.react.ReactVideoPackage;
 import cn.reactnative.modules.update.UpdatePackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.mehcode.reactnative.splashscreen.SplashScreenPackage;
@@ -26,6 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new ReactVideoPackage(),
             new UpdatePackage(),
             new VectorIconsPackage(),
             new SplashScreenPackage()

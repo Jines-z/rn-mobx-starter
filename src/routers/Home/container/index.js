@@ -1,12 +1,11 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import {
     StyleSheet,
     View,
     Image,
     ScrollView
 } from 'react-native'
-import {observer} from 'mobx-react'
-import store from '../store'
+import { observer } from 'mobx-react'
 import HeaderLeft from '../components/HeaderLeft'
 import HeaderRight from '../components/HeaderRight'
 import Paragraph from '../components/Paragraph'

@@ -1,14 +1,10 @@
 import React from 'react'
-import {
-    StackNavigator,
-    TabNavigator
-} from 'react-navigation'
-import {
-    Platform
-} from 'react-native'
+import { Platform } from 'react-native'
+import { StackNavigator, TabNavigator } from 'react-navigation'
 import Home from './Home'
 import Mine from './Mine'
 import All from './All'
+import Music from './Music'
 
 const Tab = TabNavigator({
     Home: {
@@ -71,5 +67,8 @@ export default Routers = StackNavigator({
     // 将Tab包裹在StackNavigator里面可以保证跳转页面的时候隐藏tabbar
     Tab: {
         screen: Tab
-    }
+    },
+    Music: {
+        screen: Music
+    },
 }, {})

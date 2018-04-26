@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import {
     StyleSheet,
     Text,
@@ -6,7 +6,7 @@ import {
     Platform,
     Alert
 } from 'react-native'
-import {observer,inject} from 'mobx-react'
+import { observer,inject } from 'mobx-react'
 import IconM from 'react-native-vector-icons/dist/MaterialCommunityIcons'
 import IconE from 'react-native-vector-icons/dist/Entypo'
 import SmallLoader from '../components/SmallLoader'

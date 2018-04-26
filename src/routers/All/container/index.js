@@ -1,10 +1,10 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import {
     Text,
     View,
     Image
 } from 'react-native'
-import {observer, inject} from 'mobx-react'
+import { observer, inject } from 'mobx-react'
 import NoListen from '../components/NoListen'
 import List from '../components/List'
 const all = require('../../../assets/all.png')

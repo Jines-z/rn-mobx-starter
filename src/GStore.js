@@ -22,25 +22,25 @@
 
    ====================================================== */
 
-import {observable, configure, action, computed} from 'mobx'
-configure({enforceActions:true})
+import { observable, configure, action, computed } from 'mobx'
+configure({enforceActions: true})
 
 class GStore {
     @observable right = {
-        city:'',
-        district:'',
-        weather:'',
-        temperature:''
+        city: '',
+        district: '',
+        weather: '',
+        temperature: ''
     }
     @observable list = []
 
     @action changeRight = (transmit) => {
         this.right = transmit
     }
-    @action changeList = (item) =>{
-        const check = (item) =>{
+    @action changeList = (item) => {
+        const check = (item) => {
             let checkHas = false
-            for (let i = 0;i < this.list.length;i++) {
+            for (let i = 0; i < this.list.length; i++) {
                 if (this.list[i].id == item.id) {
                     checkHas = true
                 }
@@ -56,13 +56,14 @@ class GStore {
         }
 
     }
-    @action delete = (id) =>{
-        for (let i = 0;i < this.list.length;i++) {
+    @action delete = (id) => {
+        for (let i = 0; i < this.list.length; i++) {
             if (this.list[i].id == id) {
-                this.list.splice(i,1)
+                this.list.splice(i, 1)
             }
         }
     }
+
     @computed get showLoader() {
         return this.right.city == ''
     }

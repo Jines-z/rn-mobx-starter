@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import {
     Text,
     View,
@@ -9,6 +9,7 @@ import {
 } from 'react-native'
 import { packageVersion } from 'react-native-update'
 import Update from '../components/Update'
+
 const { width } = Dimensions.get('window')
 
 const mine        = require('../../../assets/mine.png')
@@ -16,7 +17,7 @@ const mine_active = require('../../../assets/mine_active.png')
 const ground      = require('../../../assets/landGround.png')
 
 export default class Mine extends Component<{}> {
-    static navigationOptions = ({ navigation, screenProps }) => ({
+    static navigationOptions = ({navigation, screenProps}) => ({
         header:null,
         gesturesEnabled: true,
         tabBarVisible: true,

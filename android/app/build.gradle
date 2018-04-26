@@ -152,6 +152,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-video')
     compile project(':react-native-update')
     compile project(':react-native-vector-icons')
     compile project(':rn-splash-screen')

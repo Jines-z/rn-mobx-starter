@@ -1,9 +1,6 @@
-import React, {Component} from 'react'
-import {
-    Animated,
-    Easing
-} from 'react-native'
-import {observer} from 'mobx-react'
+import React, { Component } from 'react'
+import { Animated, Easing } from 'react-native'
+import { observer } from 'mobx-react'
 import IconF from 'react-native-vector-icons/dist/Feather'
 
 @observer
