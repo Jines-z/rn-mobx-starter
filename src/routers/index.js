@@ -4,7 +4,7 @@ import { StackNavigator, TabNavigator } from 'react-navigation'
 import Home from './Home'
 import Mine from './Mine'
 import All from './All'
-import Music from './Music'
+import Music from './Music/container'
 
 const Tab = TabNavigator({
     Home: {

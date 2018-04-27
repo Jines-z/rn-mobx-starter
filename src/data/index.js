@@ -22,7 +22,7 @@ export default [
         content:'一无所有来，一无所有走，中间的过程里，说“失去”都是太抬举自己了，借来的，还回去，摊开手心，握紧拳头。',
         author:'春夏',
         album:album552,
-        url:'http://m10.music.126.net/20180426225735/59a8ad3e122e48c58aef592a22e42ae0/ymusic/a024/09a7/c4c3/fc0d416790bc729172c636e2d2d1109a.mp3',
+        url:'https://beverle-y.github.io/music/552.mp3',
         music:'有何不可'
     },{
         id:540,
@@ -31,7 +31,7 @@ export default [
         content:'人生的刺，就在这里，留恋着不肯快走的，偏是你所不留恋的东西。',
         author:'钱钟书',
         album:album540,
-        url:'http://m10.music.126.net/20180426231329/89c15ce188260f7c50d7d715807d23b2/ymusic/a530/f2cc/c82e/b8b5b240d9fce9ac549b3649464926a9.mp3',
+        url:'https://beverle-y.github.io/music/540.mp3',
         music:'可乐'
     }, {
         id:539,
@@ -40,7 +40,7 @@ export default [
         content:'悲悯是很重要的情感，它往往建立在上帝视角上，它让你意识到自己的可悲与弱小，也让你深刻的理解他人的痛苦与脆弱迅速抵达谅解与宽容，本质上，你们都是一样的上帝不曾塑造完美，如果说宗教和哲学是最积极的一面，那是它们让你建立的悲悯的逻辑，你理解世界的角度，你意识到，爱，更多的是一瞬间或者长久的悲悯。',
         author:'程姬',
         album:album539,
-        url:'http://m10.music.126.net/20180426231527/1cf0579b5c3d1dde982c7f70a7fd4cbe/ymusic/b1c3/5213/2145/0481b615f5eb2cbddd60f7aa5be2a5b2.mp3',
+        url:'https://beverle-y.github.io/music/539.mp3',
         music:'叹服'
     }, {
         id:538,
@@ -49,7 +49,7 @@ export default [
         content:'为了怀抱一些新幻想，我们失去一些旧幻想，这就是成长。',
         author:'弗吉尼亚·伍尔芙',
         album:album538,
-        url:'http://m10.music.126.net/20180426231433/476e6c3fe1cdbe9d26c5ee2c4ce9c406/ymusic/ba75/edf6/856c/860fdb378460794e578b7eb7f500a48b.mp3',
+        url:'https://beverle-y.github.io/music/538.mp3',
         music:'Cannot Stop'
     }, {
         id:547,
@@ -58,7 +58,7 @@ export default [
         content:'我最大的遗憾，是你的遗憾与我有关。',
         author:'《我们》',
         album:album547,
-        url:'http://m10.music.126.net/20180426231910/62f21c85570970f495255b9ec9b05b10/ymusic/5781/6f03/2fce/00cc4735e476fa03e8956402e8500290.mp3',
+        url:'https://beverle-y.github.io/music/547.mp3',
         music:'终点'
     }, {
         id:548,
@@ -67,7 +67,7 @@ export default [
         content:'世上最可怕的不是眼前的惩罚，而是那无奈的未来。',
         author:'《血观音》',
         album:album548,
-        url:'http://m10.music.126.net/20180426231211/71f691d8ba3e18ae3145f82e53ee5134/ymusic/97bf/77fc/0815/79f1d605ab6f8f1e54dac7ea54536f3a.mp3',
+        url:'https://beverle-y.github.io/music/548.mp3',
         music:'最暖的忧伤'
     }, {
         id:549,
@@ -76,7 +76,7 @@ export default [
         content:'人生有很多时刻都不适合展开来讲，因为你要的不是有个人听你的过去，而是懂你此刻的心情，沉默吧，如果那个时候有人能握着你的手的话。',
         author:'大将军郭',
         album:album549,
-        url:'http://m10.music.126.net/20180426225242/58edff1f1322bf24136208d8b912c3fc/ymusic/b578/4360/fecf/f71ec9f18617ba142eb7ef8afabbe216.mp3',
+        url:'https://beverle-y.github.io/music/549.mp3',
         music:'贝加尔湖畔'
     }, {
         id:550,
@@ -85,7 +85,7 @@ export default [
         content:'春天的花如何得知秋天的果，今天的不堪如何原谅昨日的盲音，飞鸟如何去爱，怎么会爱上水里的鱼。',
         author:'《飞鸟与鱼》',
         album:album550,
-        url:'http://m10.music.126.net/20180426225834/826ec63faa5a282e3f107ca8ee8b24b8/ymusic/56ad/db38/c1e1/7493ebac111ccc8d40ee640615fdf89e.mp3',
+        url:'https://beverle-y.github.io/music/550.mp3',
         music:'偶阵雨'
     }
 ]

@@ -121,7 +121,7 @@ export default class Music extends Component {
             <View style={styles.container}>
                 { this.state.songs.length != 0 ?
                     <Video
-                        source={{url:this.props.GStore.musicMessage.url}}   // Can be a URL or a local file.
+                        source={{uri:this.props.GStore.musicMessage.url}}   // Can be a URL or a local file.
                         ref='video'                           // Store reference
                         rate={1.0}                     // 0 is paused, 1 is normal.
                         volume={1.0}                   // 0 is muted, 1 is normal.
