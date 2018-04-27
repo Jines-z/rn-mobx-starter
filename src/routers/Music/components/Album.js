@@ -5,8 +5,10 @@ import {
     View,
     Animated
 } from 'react-native'
+import { inject } from 'mobx-react'
 
-export default class Album extends Component {
+@inject('GStore')
+export default class Album extends Component <{}> {
     constructor(){
         super()
         this.state = {
@@ -53,7 +55,7 @@ export default class Album extends Component {
     }
     render() {
         return (
-            <View stlyle={styles.container}>
+            <View style={styles.container}>
                 <Animated.Image source={require('../../../assets/ab.png')} style={[styles.ab,{
                     transform:[
                         {rotate:this.state.abRotate.interpolate({
@@ -61,7 +63,8 @@ export default class Album extends Component {
                             outputRange: ['0deg', '360deg']
                         })}
                     ]
-                }]}></Animated.Image>
+                }]}>
+                </Animated.Image>
                 <Animated.Image source={require('../../../assets/aco.png')} style={[styles.aco,{
                     transform:[
                         {rotate:this.state.acoRotate.interpolate({

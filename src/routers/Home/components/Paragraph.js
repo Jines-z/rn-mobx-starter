@@ -23,8 +23,8 @@ export default class Paragraph extends Component <{}> {
         }
     }
     pressImage = (item) =>{
-        const { music, album, url } = item
-        const musicMessage = { music, album, url }
+        const { music, album, url, singer } = item
+        const musicMessage = { music, album, url, singer }
         this.props.GStore.changeList(item)
         this.props.GStore.changeMusic(musicMessage)
         this.props.navigation.navigate('Music')

@@ -36,7 +36,8 @@ class GStore {
     @observable musicMessage = {
         music:'',
         album:null,
-        url:''
+        url:'',
+        singer:''
     }
 
     @action changeRight = (transmit) => {

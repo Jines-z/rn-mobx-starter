@@ -23,7 +23,8 @@ export default [
         author:'春夏',
         album:album552,
         url:'https://beverle-y.github.io/music/552.mp3',
-        music:'有何不可'
+        music:'有何不可',
+        singer:'许嵩'
     },{
         id:540,
         image:img0540,
@@ -32,7 +33,8 @@ export default [
         author:'钱钟书',
         album:album540,
         url:'https://beverle-y.github.io/music/540.mp3',
-        music:'可乐'
+        music:'可乐',
+        singer:'赵紫骅'
     }, {
         id:539,
         image:img0539,
@@ -41,7 +43,8 @@ export default [
         author:'程姬',
         album:album539,
         url:'https://beverle-y.github.io/music/539.mp3',
-        music:'叹服'
+        music:'叹服',
+        singer:'许嵩'
     }, {
         id:538,
         image:img0538,
@@ -50,7 +53,8 @@ export default [
         author:'弗吉尼亚·伍尔芙',
         album:album538,
         url:'https://beverle-y.github.io/music/538.mp3',
-        music:'Cannot Stop'
+        music:'Cannot Stop',
+        singer:'CNBULE'
     }, {
         id:547,
         image:img0547,
@@ -59,7 +63,8 @@ export default [
         author:'《我们》',
         album:album547,
         url:'https://beverle-y.github.io/music/547.mp3',
-        music:'终点'
+        music:'终点',
+        singer:'关心妍'
     }, {
         id:548,
         image:img0548,
@@ -68,7 +73,8 @@ export default [
         author:'《血观音》',
         album:album548,
         url:'https://beverle-y.github.io/music/548.mp3',
-        music:'最暖的忧伤'
+        music:'最暖的忧伤',
+        singer:'田馥甄'
     }, {
         id:549,
         image:img0549,
@@ -77,7 +83,8 @@ export default [
         author:'大将军郭',
         album:album549,
         url:'https://beverle-y.github.io/music/549.mp3',
-        music:'贝加尔湖畔'
+        music:'贝加尔湖畔',
+        singer:'李建'
     }, {
         id:550,
         image:img0550,
@@ -86,7 +93,8 @@ export default [
         author:'《飞鸟与鱼》',
         album:album550,
         url:'https://beverle-y.github.io/music/550.mp3',
-        music:'偶阵雨'
+        music:'偶阵雨',
+        singer:'梁静茹'
     }
 ]
 

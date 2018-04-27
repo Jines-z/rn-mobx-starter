@@ -13,79 +13,58 @@ import {
     ToastAndroid,
     Animated
 } from 'react-native'
+import { inject,observer } from 'mobx-react'
+import IconF from 'react-native-vector-icons/FontAwesome'
 
+const { width } = Dimensions.get('window')
+
+@inject('GStore')
+@inject('store')
+@observer
 export default class Player extends Component {
     constructor(){
         super()
-        this.state = {
-            acoRotate:new Animated.Value(0),
-            abRotate:new Animated.Value(0)
-        }
-        this.abAnimation = Animated.timing(this.state.abRotate,{
-            toValue: 1,
-            duration: 30000,
-            easing:Easing.linear,
-            useNativeDriver: true
-        })
     }
     componentDidMount(){
-        this.startAcoAnimation()
+
     }
-    startAcoAnimation = () =>{
-        Animated.timing(this.state.acoRotate,{
-            toValue: 1,
-            duration: 500,
-            easing:Easing.linear,
-            useNativeDriver: true
-        }).start(({ finished })=>{
-            if (finished) {
-                this.startAbAnimation()
-            }
-        })
-    }
-    stopAcoAnimation = () =>{
-        Animated.timing(this.state.acoRotate,{
-            toValue: 0,
-            duration: 500,
-            easing:Easing.linear,
-            useNativeDriver: true
-        }).start()
-    }
-    startAbAnimation = () =>{
-        this.state.abRotate.setValue(0)
-        this.abAnimation.start(({ finished })=>{
-            if (finished) {
-                this.startAbAnimation()
-            }
-        })
+    touch = () =>{
+        this.props.store.changeIsPlay()
     }
     render() {
+        const { singer, music } = this.props.GStore.musicMessage
         return (
-            <View stlyle={styles.container}>
-                <Animated.Image source={require('../../../assets/ab.png')} style={[styles.ab,{
-                    transform:[
-                        {rotate:this.state.abRotate.interpolate({
-                            inputRange: [0, 1],
-                            outputRange: ['0deg', '360deg']
-                        })}
-                    ]
-                }]}></Animated.Image>
-                <Animated.Image source={require('../../../assets/aco.png')} style={[styles.aco,{
-                    transform:[
-                        {rotate:this.state.acoRotate.interpolate({
-                            inputRange: [0, 1],
-                            outputRange: ['0deg', '20deg']
-                        })},
-                        {translateX:this.state.acoRotate.interpolate({
-                            inputRange: [0, 1],
-                            outputRange: [0, -47]
-                        })},
-                        {translateY:this.state.acoRotate.interpolate({
-                            inputRange: [0, 1],
-                            outputRange: [0, 10]
-                        })}
-                    ]
-                }]} />
+            <View style={styles.container}>
+                <Text style={styles.music}>{music}</Text>
+                <Slider
+                    ref='slider'
+                    style={styles.slider}
+                    value={1000}
+                    minimumTrackTintColor='#192c2e'
+                    maximumTrackTintColor='#cacaca'
+                    maximumValue={100000}
+                    thumbImage={require('../../../assets/qe.png')}
+                    thumbTintColor='#192c2e'
+                />
+                <View style={styles.time}>
+                    <Text style={styles.timeText}>00.00</Text>
+                    <Text style={styles.timeText}>05.00</Text>
+                </View>
+                <Text style={styles.singer}>{singer}</Text>
+                <View style={styles.controller}>
+                    <View style={styles.left}>
+                        <IconF style={styles.ward} name='fast-backward' />
+                        <TouchableOpacity onPress={this.touch}  activeOpacity={1}>
+                            {this.props.store.isPlay ?
+                                <IconF style={styles.play} name='pause' />
+                                :
+                                <IconF style={styles.play} name='play' />
+                            }
+                        </TouchableOpacity>
+                        <IconF style={styles.ward} name='fast-forward' />
+                    </View>
+                    <IconF style={styles.ward} name='download' />
+                </View>
             </View>
         )
     }
@@ -93,22 +72,61 @@ export default class Player extends Component {
 
 const styles = StyleSheet.create({
     container:{
-        flex:1
-    },
-    ab:{
-        width:320,
-        height:320,
+        width:width,
+        height:180,
         position:'absolute',
-        top:80,
-        left:-50
+        bottom:0,
+        left:0
     },
-    aco:{
-        width:90,
-        height:90*752/226,
+    music:{
+        color:'#192c2e',
+        fontSize:13,
+        alignSelf:'center'
+    },
+    slider:{
+        marginTop:5,
+        marginHorizontal:10,
+    },
+    time:{
+        flexDirection:'row',
+        paddingHorizontal:34,
+        transform:[
+            {translateY:-5}
+        ],
+        justifyContent :'space-between',
+    },
+    timeText:{
+        color:'#192c2e',
+        opacity:.7,
+        fontSize:10
+    },
+    singer:{
+        color:'#192c2e',
+        fontSize:12,
+        opacity:.6,
         alignSelf:'center',
-        position:'absolute',
-        top:85,
-        right:0,
-        zIndex:1
+        transform:[
+            {translateY:-5}
+        ],
+    },
+    controller:{
+        flexDirection:'row',
+        justifyContent :'space-between',
+        marginTop:30,
+        paddingLeft:40,
+        paddingRight:45
+    },
+    left:{
+        width:150,
+        flexDirection:'row',
+        justifyContent :'space-between',
+    },
+    ward:{
+        color:'#cacaca',
+        fontSize:24,
+    },
+    play:{
+        color:'#192c2e',
+        fontSize:24,
     }
 })
