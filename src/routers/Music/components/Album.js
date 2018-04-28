@@ -4,9 +4,11 @@ import {
     Easing,
     View,
     Animated,
-    Text
+    Text,
+    Dimensions
 } from 'react-native'
 import { inject, observer } from 'mobx-react'
+const { width } = Dimensions.get('window')
 
 @inject('GStore')
 @inject('store')
@@ -104,19 +106,19 @@ const styles = StyleSheet.create({
         flex:1
     },
     ab:{
-        width:280,
-        height:280,
+        width:width/1.3,
+        height:width/1.3,
         position:'absolute',
         top:80,
         left:-50
     },
     aco:{
-        width:90,
-        height:90*752/226,
+        width:width/4.6,
+        height:width/4.5*752/226,
         alignSelf:'center',
         position:'absolute',
-        top:50,
-        right:20,
+        top:70,
+        left:width/1.3-30,
         zIndex:1
     }
 })

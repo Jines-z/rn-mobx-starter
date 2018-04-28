@@ -71,4 +71,6 @@ export default Routers = StackNavigator({
     Music: {
         screen: Music
     },
-}, {})
+}, {
+    mode:'modal'
+})

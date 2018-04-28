@@ -15,6 +15,7 @@ export default class Music extends Component {
     }
     static navigationOptions = ({ navigation, screenProps }) => ({
         headerStyle: {
+            backgroundColor:'#fff',
             borderBottomWidth:0,
             elevation: 0
         }
@@ -35,6 +36,7 @@ export default class Music extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
+        overflow:'hidden'
     }
 })

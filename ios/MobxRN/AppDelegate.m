@@ -7,10 +7,10 @@
 
 #import "AppDelegate.h"
 #import "RCTHotUpdate/RCTHotUpdate.h"
-
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import <RCTSplashScreen/RCTSplashScreen.h>
+#import <AVFoundation/AVFoundation.h>
 
 
 @implementation AppDelegate
@@ -30,7 +30,7 @@
                                                    launchOptions:launchOptions];
   [RCTSplashScreen show:rootView];
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
-
+  [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
   rootViewController.view = rootView;
