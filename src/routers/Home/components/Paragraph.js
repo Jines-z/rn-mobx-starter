@@ -15,13 +15,6 @@ import data from '../../../data'
 @withNavigation
 @inject('GStore')
 export default class Paragraph extends Component <{}> {
-    shouldComponentUpdate(nextProps){
-        if (this.props == nextProps || this.props != nextProps) {
-            return false
-        } else {
-            return true
-        }
-    }
     pressImage = (item) =>{
         const { music, album, url, singer } = item
         const musicMessage = { music, album, url, singer }

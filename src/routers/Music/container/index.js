@@ -12,12 +12,13 @@ import {
     ToastAndroid,
     Animated
 } from 'react-native'
-import { inject,Provider } from 'mobx-react'
+import { inject, Provider, observer } from 'mobx-react'
 import Store from '../store'
 import Album from '../components/Album'
 import Player from '../components/Player'
 
 @inject('GStore')
+@observer
 export default class Music extends Component {
     constructor(){
         super()

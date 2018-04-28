@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {
     StyleSheet,
     Text,
     View
 } from 'react-native'
-export default class HeaderLeft extends Component <{}> {
-    getDateArr = () =>{
+
+const HeaderLeft = () =>{
+    const getDate = () =>{
         let dateArr = new Date().toDateString().split(' ')
         return {
             year:dateArr[3],
@@ -13,21 +14,15 @@ export default class HeaderLeft extends Component <{}> {
             day:dateArr[2]
         }
     }
-    shouldComponentUpdate(nextProps){
-        if (this.props == nextProps) {
-            return false
-        }
-    }
-    render(){
-        return (
-            <View style={styles.container}>
-                <Text style={styles.day}>{this.getDateArr().day}</Text>
-                <Text style={styles.month}>{this.getDateArr().month}.</Text>
-                <Text style={styles.year}>{this.getDateArr().year}</Text>
-            </View>
-        )
-    }
+    return(
+        <View style={styles.container}>
+            <Text style={styles.day}>{getDate().day}</Text>
+            <Text style={styles.month}>{getDate().month}.</Text>
+            <Text style={styles.year}>{getDate().year}</Text>
+        </View>
+    )
 }
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -54,3 +49,5 @@ const styles = StyleSheet.create({
         color:'black'
     }
 })
+
+export default HeaderLeft

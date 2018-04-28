@@ -30,12 +30,10 @@ export default class HeaderRight extends Component <{}> {
         })
     }
     componentDidMount(){
-        const {right} = this.props.GStore
+        const { right } = this.props.GStore
         if (right.city == '') {
             this.getLocation().then((coords)=>{
-                const {longitude,latitude} = coords
-                // let longitude = '30'
-                // let latitude = '120'
+                const { longitude,latitude } = coords
                 let url = 'http://restapi.amap.com/v3/geocode/regeo?'
                 let options = {
                     key:'d692602fc4aa285121e4bde52aab5e22',
@@ -43,7 +41,7 @@ export default class HeaderRight extends Component <{}> {
                 }
                 Get(url,options,(responseBody)=>{
                     if(responseBody.status ==1){
-                        const {adcode,city,district} = responseBody.regeocode.addressComponent
+                        const { adcode,city,district } = responseBody.regeocode.addressComponent
                         let url = 'http://restapi.amap.com/v3/weather/weatherInfo?'
                         let options = {
                             key:'d692602fc4aa285121e4bde52aab5e22',
@@ -53,7 +51,7 @@ export default class HeaderRight extends Component <{}> {
                         }
                         Get(url,options,(res)=>{
                             if (res.status == 1) {
-                                const {weather,temperature} = res.lives[0]
+                                const { weather,temperature } = res.lives[0]
                                 let tran = {
                                     city,
                                     district,
@@ -71,20 +69,13 @@ export default class HeaderRight extends Component <{}> {
         }
 
     }
-    shouldComponentUpdate(nextProps){
-        if (this.props == nextProps) {
-            return false
-        } else {
-            return true
-        }
-    }
     render(){
-        const {city,weather,temperature} = this.props.GStore.right
-        const {showLoader} = this.props.GStore
+        const { city,weather,temperature } = this.props.GStore.right
+        const { showLoader } = this.props.GStore
         return (
             <View style={styles.container}>
                 {showLoader ?
-                    <SmallLoader />
+                    <SmallLoader size={13} />
                     :
                     <View style={styles.textContainer}>
                         <Text style={[styles.base]}>{city}</Text>

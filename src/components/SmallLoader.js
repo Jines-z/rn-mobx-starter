@@ -24,9 +24,6 @@ export default class SmallLoader extends Component <{}> {
     componentDidMount(){
        this.startAnimation()
     }
-    shouldComponentUpdate(){
-        return false
-    }
     render(){
         return (
             <Animated.View style={{transform:[
@@ -35,7 +32,7 @@ export default class SmallLoader extends Component <{}> {
                     outputRange: ['0deg', '360deg']
                 })}
             ]}}>
-                <IconF name='loader' size={13} />
+                <IconF name='loader' size={this.props.size} />
             </Animated.View>
         )
     }
