@@ -25,8 +25,9 @@ export default class VideoComponent extends Component {
     onLoad = (e) =>{
         let duration =  this.formatTime(Math.floor(e.duration))
         let maxValue = e.duration*1000
-        let { changeIsLoad, changeDuration, changeSliderMaxValue, changeIsPlay } = this.props.store
+        let { changeIsLoad, changeCurrent, changeDuration, changeSliderMaxValue, changeIsPlay } = this.props.store
         changeIsLoad()
+        changeCurrent('00:00')
         changeIsPlay(true)
         changeDuration(duration)
         changeSliderMaxValue(maxValue)

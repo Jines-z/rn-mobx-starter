@@ -52,7 +52,6 @@ export default class Player extends Component {
                     minimumTrackTintColor='#000'
                     maximumTrackTintColor='#cacaca'
                     maximumValue={sliderMaxValue}
-                    thumbImage={require('../../../assets/qe.png')}
                     thumbTintColor='#000'
                     step={1}
                     onValueChange={this.onValueChange}
@@ -93,7 +92,8 @@ const styles = StyleSheet.create({
     music: {
         color: '#000',
         fontSize: 13,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        opacity:0.8
     },
     slider: {
         marginTop: 5,
@@ -110,7 +110,8 @@ const styles = StyleSheet.create({
     timeText: {
         color: '#000',
         opacity: .7,
-        fontSize: 10
+        fontSize: 10,
+        backgroundColor:'transparent'
     },
     singer: {
         color: '#000',
