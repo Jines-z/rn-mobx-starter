@@ -49,11 +49,11 @@ export default class Player extends Component {
                     ref='slider'
                     style={styles.slider}
                     value={sliderValue}
-                    minimumTrackTintColor='#192c2e'
+                    minimumTrackTintColor='#000'
                     maximumTrackTintColor='#cacaca'
                     maximumValue={sliderMaxValue}
                     thumbImage={require('../../../assets/qe.png')}
-                    thumbTintColor='#192c2e'
+                    thumbTintColor='#000'
                     step={1}
                     onValueChange={this.onValueChange}
                     onSlidingComplete={this.onSlidingComplete}
@@ -70,7 +70,7 @@ export default class Player extends Component {
                             {isLoad ?
                                 <IconF style={styles.play} name={isPlay ? 'pause' : 'play'} />
                                 :
-                                <Loader size={22} color='#192c2e' />
+                                <Loader size={22} color='#000' />
                             }
                         </TouchableOpacity>
                         <IconF style={styles.ward} name='fast-forward' />
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
         left: 0
     },
     music: {
-        color: '#192c2e',
+        color: '#000',
         fontSize: 13,
         alignSelf: 'center'
     },
@@ -108,12 +108,12 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     timeText: {
-        color: '#192c2e',
+        color: '#000',
         opacity: .7,
         fontSize: 10
     },
     singer: {
-        color: '#192c2e',
+        color: '#000',
         fontSize: 12,
         opacity: .6,
         alignSelf: 'center',
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
     },
     play: {
-        color: '#192c2e',
+        color: '#000',
         fontSize: 24,
     }
 })

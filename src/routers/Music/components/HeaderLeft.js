@@ -13,7 +13,7 @@ const HeaderLeft = ({ navigation }) =>{
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={onPress} activeOpacity={0.8} >
-                <IconE name='chevron-with-circle-down' size={35} color='#192c2e' />
+                <IconE name='chevron-with-circle-down' size={35} color='#000' />
             </TouchableOpacity>
         </View>
     )
