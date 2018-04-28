@@ -25,7 +25,7 @@ export default class All extends Component<{}> {
         },
         gesturesEnabled: true,
         tabBarVisible: true,
-        tabBarIcon: (({tintColor, focused}) => {
+        tabBarIcon: (({ tintColor, focused }) => {
             return (
                 <Image
                     source={!focused ? all : all_active}
@@ -36,7 +36,7 @@ export default class All extends Component<{}> {
         tabBarLabel: 'All',
     })
     render() {
-        const {list} = this.props.GStore
+        const { list } = this.props.GStore
         return (
             <View>
                 {list.length == 0 ?

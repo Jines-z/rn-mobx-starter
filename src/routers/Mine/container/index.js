@@ -17,11 +17,11 @@ const mine_active = require('../../../assets/mine_active.png')
 const ground      = require('../../../assets/landGround.png')
 
 export default class Mine extends Component<{}> {
-    static navigationOptions = ({navigation, screenProps}) => ({
+    static navigationOptions = ({ navigation, screenProps }) => ({
         header:null,
         gesturesEnabled: true,
         tabBarVisible: true,
-        tabBarIcon: (({tintColor, focused}) => {
+        tabBarIcon: (({ tintColor, focused }) => {
             return (
                 <Image
                     source={!focused ? mine : mine_active}

@@ -29,7 +29,7 @@ export default class Home extends Component<{}> {
         headerRight:(
             <HeaderRight />
         ),
-        tabBarIcon: (({tintColor, focused}) => {
+        tabBarIcon: (({ tintColor, focused }) => {
             return (
                 <Image
                     source={!focused ? home : home_active}

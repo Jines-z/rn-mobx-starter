@@ -15,7 +15,7 @@ export default class List extends Component<{}> {
         this.props.GStore.delete(id)
     }
     render() {
-        const {list} = this.props.GStore
+        const { list } = this.props.GStore
         return (
             <View style={styles.container}>
                 {list.map((item,i)=>

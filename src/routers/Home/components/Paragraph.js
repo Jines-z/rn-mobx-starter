@@ -9,8 +9,9 @@ import {
 } from 'react-native'
 import { inject } from 'mobx-react'
 import { withNavigation } from 'react-navigation'
-const { width } = Dimensions.get('window')
 import data from '../../../data'
+
+const { width } = Dimensions.get('window')
 
 @withNavigation
 @inject('GStore')

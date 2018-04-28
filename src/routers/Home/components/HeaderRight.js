@@ -6,7 +6,7 @@ import {
     Platform,
     Alert
 } from 'react-native'
-import { observer,inject } from 'mobx-react'
+import { observer, inject } from 'mobx-react'
 import IconM from 'react-native-vector-icons/dist/MaterialCommunityIcons'
 import IconE from 'react-native-vector-icons/dist/Entypo'
 import SmallLoader from '../../../components/SmallLoader'
@@ -33,15 +33,15 @@ export default class HeaderRight extends Component <{}> {
         const { right } = this.props.GStore
         if (right.city == '') {
             this.getLocation().then((coords)=>{
-                const { longitude,latitude } = coords
+                const { longitude, latitude } = coords
                 let url = 'http://restapi.amap.com/v3/geocode/regeo?'
                 let options = {
                     key:'d692602fc4aa285121e4bde52aab5e22',
                     location:longitude+','+latitude
                 }
-                Get(url,options,(responseBody)=>{
+                Get(url, options, (responseBody)=>{
                     if(responseBody.status ==1){
-                        const { adcode,city,district } = responseBody.regeocode.addressComponent
+                        const { adcode, city, district } = responseBody.regeocode.addressComponent
                         let url = 'http://restapi.amap.com/v3/weather/weatherInfo?'
                         let options = {
                             key:'d692602fc4aa285121e4bde52aab5e22',
@@ -49,7 +49,7 @@ export default class HeaderRight extends Component <{}> {
                             extensions:'base',
                             output:'JSON'
                         }
-                        Get(url,options,(res)=>{
+                        Get(url, options, (res)=>{
                             if (res.status == 1) {
                                 const { weather,temperature } = res.lives[0]
                                 let tran = {
@@ -70,7 +70,7 @@ export default class HeaderRight extends Component <{}> {
 
     }
     render(){
-        const { city,weather,temperature } = this.props.GStore.right
+        const { city, weather, temperature } = this.props.GStore.right
         const { showLoader } = this.props.GStore
         return (
             <View style={styles.container}>
@@ -81,7 +81,7 @@ export default class HeaderRight extends Component <{}> {
                         <Text style={[styles.base]}>{city}</Text>
                         <IconE name='dot-single' color='gray'/>
                         <Text style={[styles.base]}>{weather}</Text>
-                        <Text style={[styles.base,styles.temperature]}>{temperature}</Text>
+                        <Text style={[styles.base, styles.temperature]}>{temperature}</Text>
                         <IconM name='temperature-celsius' size={12} style={styles.icon} color='gray'/>
                     </View>
                 }
