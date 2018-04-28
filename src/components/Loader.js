@@ -4,7 +4,7 @@ import { observer } from 'mobx-react'
 import IconF from 'react-native-vector-icons/dist/Feather'
 
 @observer
-export default class SmallLoader extends Component <{}> {
+export default class WeatherLoader extends Component <{}> {
     constructor() {
         super()
         this.state = {
@@ -32,7 +32,7 @@ export default class SmallLoader extends Component <{}> {
                     outputRange: ['0deg', '360deg']
                 })}
             ]}}>
-                <IconF name='loader' size={this.props.size} />
+                <IconF name='loader' size={this.props.size} color={this.props.color} />
             </Animated.View>
         )
     }

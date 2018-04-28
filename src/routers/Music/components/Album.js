@@ -28,11 +28,13 @@ export default class Album extends Component <{}> {
     componentWillReact(){
         if (this.props.store.isPlay) {
             this.startAcoAnimation()
+            this.state.abRotate.addListener((e)=>{
+                this.props.store.changeAbRotate(e.value)
+            })
         } else {
             this.stopAcoAnimation()
-            this.abAnimation.stop((value)=>{
-                console.log(value)
-            })
+            this.abAnimation.stop()
+            this.state.abRotate.removeListener()
         }
     }
     startAcoAnimation = () =>{
@@ -46,6 +48,7 @@ export default class Album extends Component <{}> {
                 this.startAbAnimation()
             }
         })
+
     }
     stopAcoAnimation = () =>{
         Animated.timing(this.state.acoRotate,{
@@ -56,7 +59,7 @@ export default class Album extends Component <{}> {
         }).start()
     }
     startAbAnimation = () =>{
-        this.state.abRotate.setValue(0)
+        this.state.abRotate.setValue(this.props.store.abRotate)
         this.abAnimation.start(({ finished })=>{
             if (finished) {
                 this.startAbAnimation()

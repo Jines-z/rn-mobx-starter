@@ -13,18 +13,18 @@ export default [
         photographer:'王小洋',
         content:'一无所有来，一无所有走，中间的过程里，说“失去”都是太抬举自己了，借来的，还回去，摊开手心，握紧拳头。',
         author:'春夏',
-        url:'https://beverle-y.github.io/music/552.m4a',
-        music:'有何不可',
-        singer:'许嵩'
+        url:'https://beverle-y.github.io/music/540.m4a',
+        music:'可乐',
+        singer:'赵紫骅'
     },{
         id:540,
         image:img0540,
         photographer:'Satwik Arora',
         content:'人生的刺，就在这里，留恋着不肯快走的，偏是你所不留恋的东西。',
         author:'钱钟书',
-        url:'https://beverle-y.github.io/music/540.m4a',
-        music:'可乐',
-        singer:'赵紫骅'
+        url:'https://beverle-y.github.io/music/552.m4a',
+        music:'有何不可',
+        singer:'许嵩'
     }, {
         id:539,
         image:img0539,

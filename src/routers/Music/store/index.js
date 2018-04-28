@@ -9,26 +9,30 @@ class Store {
     @observable sliderMaxValue = 0
     @observable current = '--:--'
     @observable duration = '--:--'
-    @action changeIsPlay = (tran) =>{
-        this.isPlay = tran
+    @observable abRotate = 0
+    @action changeIsPlay = (boolean) =>{
+        this.isPlay = boolean
     }
-    @action changeSliderValue = (tran) =>{
-        this.sliderValue = tran
+    @action changeSliderValue = (num) =>{
+        this.sliderValue = num
     }
-    @action changeSliderMaxValue = (tran) =>{
-        this.sliderMaxValue = tran
+    @action changeSliderMaxValue = (num) =>{
+        this.sliderMaxValue = num
     }
     @action changeCurrent = (tran) =>{
         this.current = tran
     }
-    @action changeDuration = (tran) =>{
-        this.duration = tran
+    @action changeDuration = (num) =>{
+        this.duration = num
     }
     @action changeIsLoad = () =>{
         this.isLoad = true
     }
-    @action changePlayer = (tran) =>{
-        this.player = tran
+    @action changePlayer = (ref) =>{
+        this.player = ref
+    }
+    @action changeAbRotate = (num) =>{
+        this.abRotate = num
     }
 
 }

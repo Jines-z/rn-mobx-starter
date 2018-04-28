@@ -9,6 +9,7 @@ import {
 } from 'react-native'
 import { inject,observer } from 'mobx-react'
 import IconF from 'react-native-vector-icons/FontAwesome'
+import Loader from '../../../components/Loader'
 
 const { width } = Dimensions.get('window')
 
@@ -16,12 +17,6 @@ const { width } = Dimensions.get('window')
 @inject('store')
 @observer
 export default class Player extends Component {
-    constructor(){
-        super()
-    }
-    componentDidMount(){
-
-    }
     touch = () =>{
         let { changeIsPlay, isPlay } = this.props.store
         changeIsPlay(!isPlay)
@@ -46,7 +41,7 @@ export default class Player extends Component {
     }
     render() {
         const { singer, music } = this.props.GStore.musicMessage
-        const { current, duration, sliderValue, sliderMaxValue } = this.props.store
+        const { current, duration, sliderValue, sliderMaxValue, isPlay, isLoad } = this.props.store
         return (
             <View style={styles.container}>
                 <Text style={styles.music}>{music}</Text>
@@ -72,10 +67,10 @@ export default class Player extends Component {
                     <View style={styles.left}>
                         <IconF style={styles.ward} name='fast-backward' />
                         <TouchableOpacity onPress={this.touch}  activeOpacity={1}>
-                            {this.props.store.isPlay ?
-                                <IconF style={styles.play} name='pause' />
+                            {isLoad ?
+                                <IconF style={styles.play} name={isPlay ? 'pause' : 'play'} />
                                 :
-                                <IconF style={styles.play} name='play' />
+                                <Loader size={22} color='#192c2e' />
                             }
                         </TouchableOpacity>
                         <IconF style={styles.ward} name='fast-forward' />
@@ -137,6 +132,7 @@ const styles = StyleSheet.create({
         width:150,
         flexDirection:'row',
         justifyContent :'space-between',
+        alignItems:'center'
     },
     ward:{
         color:'#cacaca',
