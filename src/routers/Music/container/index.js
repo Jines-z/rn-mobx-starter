@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { inject, Provider, observer } from 'mobx-react'
 import Store from '../store'
+import HeaderLeft from '../components/HeaderLeft'
 import Album from '../components/Album'
 import Player from '../components/Player'
 import VideoComponent from '../components/VideoComponent'
@@ -18,7 +19,10 @@ export default class Music extends Component {
             backgroundColor:'#fff',
             borderBottomWidth:0,
             elevation: 0
-        }
+        },
+        headerLeft: (
+            <HeaderLeft navigation={navigation} />
+        ),
     })
     render() {
         return (

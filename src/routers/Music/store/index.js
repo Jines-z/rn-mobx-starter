@@ -10,6 +10,7 @@ class Store {
     @observable current = '--:--'
     @observable duration = '--:--'
     @observable abRotate = 0
+
     @action changeIsPlay = (boolean) =>{
         this.isPlay = boolean
     }

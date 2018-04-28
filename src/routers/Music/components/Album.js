@@ -61,6 +61,10 @@ export default class Album extends Component <{}> {
         }).start()
     }
     startAbAnimation = () =>{
+        let { abRotate, changeAbRotate } = this.props.store
+        if (abRotate == 1) {
+            changeAbRotate(0)
+        }
         this.state.abRotate.setValue(this.props.store.abRotate)
         this.abAnimation.start(({ finished })=>{
             if (finished) {
@@ -72,8 +76,8 @@ export default class Album extends Component <{}> {
         return (
             <View style={styles.container}>
                 <Animated.Image source={require('../../../assets/ab.png')} style={[styles.ab,{
-                    transform:[
-                        {rotate:this.state.abRotate.interpolate({
+                    transform: [
+                        {rotate: this.state.abRotate.interpolate({
                             inputRange: [0, 1],
                             outputRange: ['0deg', '360deg']
                         })}
@@ -82,15 +86,15 @@ export default class Album extends Component <{}> {
                 <Text style={{display:'none'}}>{this.props.store.isPlay}</Text>
                 <Animated.Image source={require('../../../assets/aco.png')} style={[styles.aco,{
                     transform:[
-                        {rotate:this.state.acoRotate.interpolate({
+                        {rotate: this.state.acoRotate.interpolate({
                             inputRange: [0, 1],
                             outputRange: ['0deg', '20deg']
                         })},
-                        {translateX:this.state.acoRotate.interpolate({
+                        {translateX: this.state.acoRotate.interpolate({
                             inputRange: [0, 1],
                             outputRange: [0, -47]
                         })},
-                        {translateY:this.state.acoRotate.interpolate({
+                        {translateY: this.state.acoRotate.interpolate({
                             inputRange: [0, 1],
                             outputRange: [0, 10]
                         })}
@@ -102,23 +106,23 @@ export default class Album extends Component <{}> {
 }
 
 const styles = StyleSheet.create({
-    container:{
-        flex:1
+    container: {
+        flex: 1
     },
-    ab:{
-        width:width/1.3,
-        height:width/1.3,
-        position:'absolute',
-        top:80,
-        left:-50
+    ab: {
+        width: width / 1.3,
+        height: width / 1.3,
+        position: 'absolute',
+        top: 80,
+        left: -50
     },
-    aco:{
-        width:width/4.6,
-        height:width/4.5*752/226,
-        alignSelf:'center',
-        position:'absolute',
-        top:70,
-        left:width/1.3-30,
-        zIndex:1
+    aco: {
+        width: width / 4.6,
+        height: width / 4.5 * 752 / 226,
+        alignSelf: 'center',
+        position: 'absolute',
+        top: 70,
+        left: width / 1.3 - 30,
+        zIndex: 1
     }
 })

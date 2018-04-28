@@ -34,30 +34,27 @@ export default class VideoComponent extends Component {
     setPlayer = (ref) =>{
         this.props.store.changePlayer(ref)
     }
+    end = () =>{
+        let { changeCurrent, changeSliderValue } = this.props.store
+        changeSliderValue(0)
+        changeCurrent('00:00')
+    }
     render() {
         return (
             <Video
-                source={{uri:this.props.GStore.musicMessage.url}}   // Can be a URL or a local file.
-                ref={this.setPlayer}                          // Store reference
-                rate={1.0}                     // 0 is paused, 1 is normal.
-                volume={1.0}                   // 0 is muted, 1 is normal.
-                muted={false}                  // Mutes the audio entirely.
-                paused={!this.props.store.isPlay}                 // Pauses playback entirely.
-                repeat={true}                  // Repeat forever.
-                playInBackground={false}       // Audio continues to play when app entering background.
-                playWhenInactive={false}       // [iOS] Video continues to play when control or notification center are shown.
-                progressUpdateInterval={250.0} // [iOS] Interval to fire onProgress (default to ~250ms)
+                source={{uri:this.props.GStore.musicMessage.url}}
+                ref={this.setPlayer}
+                rate={1.0}
+                volume={1.0}
+                muted={false}
+                paused={!this.props.store.isPlay}
+                repeat={true}
+                playInBackground={false}        // 当app进入后台时，不继续播放
+                playWhenInactive={false}        // [iOS] 收到通知时，不继续播放
+                progressUpdateInterval={250.0}  // 调用onProgress的间隔
                 onLoad={this.onLoad}
                 onProgress={this.onProgress}
-                onEnd={() => {
-                    let index = this.state.songs.indexOf(this.state.currentSong)
-                    index = index == this.state.songs.length-1 ? 0 : index+1
-                    this.setState({
-                        currentSong: this.state.songs[index],
-                        sliderValue: 0,
-                        current: '00:00',
-                    })
-                }}
+                onEnd={this.end}
                 onError={(e) => {
                     console.log(e)
                     ToastAndroid.show('mp3资源出错', ToastAndroid.CENTER)

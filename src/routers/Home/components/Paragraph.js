@@ -28,7 +28,7 @@ export default class Paragraph extends Component <{}> {
             <View style={styles.container}>
                 {data.map((item,i)=>
                     <View key={i} style={styles.wrap}>
-                        <TouchableOpacity activeOpacity={1} onPress={e=>this.pressImage(item)}>
+                        <TouchableOpacity activeOpacity={0.95} onPress={e=>this.pressImage(item)}>
                             <Image source={item.image} style={styles.image}/>
                         </TouchableOpacity>
                         <Text style={styles.photographer}>摄影丨{item.photographer}</Text>

@@ -4,22 +4,32 @@ import {
     View,
     Image,
     Platform,
-    StyleSheet
+    StyleSheet,
+    TouchableOpacity
 } from 'react-native'
 import { observer, inject } from 'mobx-react'
+import { withNavigation } from 'react-navigation'
 
+@withNavigation
 @inject('GStore')
 @observer
 export default class List extends Component<{}> {
     delete = (id) =>{
         this.props.GStore.delete(id)
     }
+    onPress = (item) =>{
+        const { music, album, url, singer } = item
+        const musicMessage = { music, album, url, singer }
+        this.props.GStore.changeList(item)
+        this.props.GStore.changeMusic(musicMessage)
+        this.props.navigation.navigate('Music')
+    }
     render() {
         const { list } = this.props.GStore
         return (
             <View style={styles.container}>
                 {list.map((item,i)=>
-                    <View style={styles.row} key={i}>
+                    <TouchableOpacity style={styles.row} key={i} activeOpacity={0.9} onPress={e=>this.onPress(item)}>
                         <View style={styles.content}>
                             <View style={styles.left}>
                                 <Image source={item.image} style={styles.image} />
@@ -29,7 +39,7 @@ export default class List extends Component<{}> {
                                 <Text style={styles.photographer}>{item.photographer}</Text>
                             </View>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                 )}
             </View>
         )

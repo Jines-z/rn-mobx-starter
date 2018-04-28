@@ -83,63 +83,63 @@ export default class Player extends Component {
 }
 
 const styles = StyleSheet.create({
-    container:{
-        width:width,
-        height:180,
-        position:'absolute',
-        bottom:0,
-        left:0
+    container: {
+        width: width,
+        height: 180,
+        position: 'absolute',
+        bottom: 0,
+        left: 0
     },
-    music:{
-        color:'#192c2e',
-        fontSize:13,
-        alignSelf:'center'
+    music: {
+        color: '#192c2e',
+        fontSize: 13,
+        alignSelf: 'center'
     },
-    slider:{
-        marginTop:5,
-        marginHorizontal:10,
+    slider: {
+        marginTop: 5,
+        marginHorizontal: 10,
     },
-    time:{
-        flexDirection:'row',
-        paddingHorizontal:34,
-        transform:[
-            {translateY:-5}
+    time: {
+        flexDirection: 'row',
+        paddingHorizontal: 34,
+        transform: [
+            {translateY: -5}
         ],
-        justifyContent :'space-between',
+        justifyContent: 'space-between',
     },
-    timeText:{
-        color:'#192c2e',
-        opacity:.7,
-        fontSize:10
+    timeText: {
+        color: '#192c2e',
+        opacity: .7,
+        fontSize: 10
     },
-    singer:{
-        color:'#192c2e',
-        fontSize:12,
-        opacity:.6,
-        alignSelf:'center',
-        transform:[
-            {translateY:-5}
+    singer: {
+        color: '#192c2e',
+        fontSize: 12,
+        opacity: .6,
+        alignSelf: 'center',
+        transform: [
+            {translateY: -5}
         ],
     },
-    controller:{
-        flexDirection:'row',
-        justifyContent :'space-between',
-        marginTop:30,
-        paddingLeft:40,
-        paddingRight:45
+    controller: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 30,
+        paddingLeft: 40,
+        paddingRight: 45
     },
-    left:{
-        width:150,
-        flexDirection:'row',
-        justifyContent :'space-between',
-        alignItems:'center'
+    left: {
+        width: 150,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
     },
-    ward:{
-        color:'#cacaca',
-        fontSize:24,
+    ward: {
+        color: '#cacaca',
+        fontSize: 24,
     },
-    play:{
-        color:'#192c2e',
-        fontSize:24,
+    play: {
+        color: '#192c2e',
+        fontSize: 24,
     }
 })
