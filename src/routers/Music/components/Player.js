@@ -2,16 +2,10 @@ import React, { Component } from 'react'
 import {
     StyleSheet,
     Dimensions,
-    Easing,
     Text,
-    Image,
     View,
     Slider,
-    TouchableOpacity,
-    ListView,
-    Platform,
-    ToastAndroid,
-    Animated
+    TouchableOpacity
 } from 'react-native'
 import { inject,observer } from 'mobx-react'
 import IconF from 'react-native-vector-icons/FontAwesome'
@@ -29,26 +23,49 @@ export default class Player extends Component {
 
     }
     touch = () =>{
-        this.props.store.changeIsPlay()
+        let { changeIsPlay, isPlay } = this.props.store
+        changeIsPlay(!isPlay)
+    }
+    formatTime(time) {
+        // 71s -> 01:11
+        let min = Math.floor(time / 60)
+        let second = time - min * 60
+        min = min >= 10 ? min : '0' + min
+        second = second >= 10 ? second : '0' + second
+        return min + ':' + second
+    }
+    onValueChange = (value) =>{
+        let { changeIsPlay, changeCurrent } = this.props.store
+        changeIsPlay(false)
+        changeCurrent(this.formatTime(Math.floor(value / 1000)))
+    }
+    onSlidingComplete = (value) =>{
+        let { player, changeIsPlay } = this.props.store
+        player.seek(value / 1000)
+        changeIsPlay(true)
     }
     render() {
         const { singer, music } = this.props.GStore.musicMessage
+        const { current, duration, sliderValue, sliderMaxValue } = this.props.store
         return (
             <View style={styles.container}>
                 <Text style={styles.music}>{music}</Text>
                 <Slider
                     ref='slider'
                     style={styles.slider}
-                    value={1000}
+                    value={sliderValue}
                     minimumTrackTintColor='#192c2e'
                     maximumTrackTintColor='#cacaca'
-                    maximumValue={100000}
+                    maximumValue={sliderMaxValue}
                     thumbImage={require('../../../assets/qe.png')}
                     thumbTintColor='#192c2e'
+                    step={1}
+                    onValueChange={this.onValueChange}
+                    onSlidingComplete={this.onSlidingComplete}
                 />
                 <View style={styles.time}>
-                    <Text style={styles.timeText}>00.00</Text>
-                    <Text style={styles.timeText}>05.00</Text>
+                    <Text style={styles.timeText}>{current}</Text>
+                    <Text style={styles.timeText}>{duration}</Text>
                 </View>
                 <Text style={styles.singer}>{singer}</Text>
                 <View style={styles.controller}>

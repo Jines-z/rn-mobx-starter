@@ -3,11 +3,14 @@ import {
     StyleSheet,
     Easing,
     View,
-    Animated
+    Animated,
+    Text
 } from 'react-native'
-import { inject } from 'mobx-react'
+import { inject, observer } from 'mobx-react'
 
 @inject('GStore')
+@inject('store')
+@observer
 export default class Album extends Component <{}> {
     constructor(){
         super()
@@ -22,8 +25,15 @@ export default class Album extends Component <{}> {
             useNativeDriver: true
         })
     }
-    componentDidMount(){
-        this.startAcoAnimation()
+    componentWillReact(){
+        if (this.props.store.isPlay) {
+            this.startAcoAnimation()
+        } else {
+            this.stopAcoAnimation()
+            this.abAnimation.stop((value)=>{
+                console.log(value)
+            })
+        }
     }
     startAcoAnimation = () =>{
         Animated.timing(this.state.acoRotate,{
@@ -63,8 +73,8 @@ export default class Album extends Component <{}> {
                             outputRange: ['0deg', '360deg']
                         })}
                     ]
-                }]}>
-                </Animated.Image>
+                }]} />
+                <Text style={{display:'none'}}>{this.props.store.isPlay}</Text>
                 <Animated.Image source={require('../../../assets/aco.png')} style={[styles.aco,{
                     transform:[
                         {rotate:this.state.acoRotate.interpolate({

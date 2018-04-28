@@ -11,13 +11,6 @@ import { observer, inject } from 'mobx-react'
 @inject('GStore')
 @observer
 export default class List extends Component<{}> {
-    shouldComponentUpdate(nextProps){
-        if (this.props.GStore.list.length != nextProps.GStore.length) {
-            return true
-        } else {
-            return false
-        }
-    }
     delete = (id) =>{
         this.props.GStore.delete(id)
     }
