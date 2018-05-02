@@ -10,7 +10,6 @@ import {
 import { inject, observer } from 'mobx-react'
 const { width } = Dimensions.get('window')
 
-@inject('GStore')
 @inject('store')
 @observer
 export default class Album extends Component <{}> {
@@ -65,7 +64,7 @@ export default class Album extends Component <{}> {
         if (abRotate == 1) {
             changeAbRotate(0)
         }
-        this.state.abRotate.setValue(this.props.store.abRotate)
+        this.state.abRotate.setValue(abRotate)
         this.abAnimation.start(({ finished })=>{
             if (finished) {
                 this.startAbAnimation()

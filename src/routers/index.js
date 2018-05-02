@@ -24,7 +24,7 @@ const Tab = TabNavigator({
     initialRouteName: '', // 设置默认的页面组件
     backBehavior: 'none', // 按 back 键是否跳转到第一个Tab(首页)， none 为不跳转
     tabBarOptions: {
-        // iOS属性
+        // ***************iOS属性***************
         // activeBackgroundColor:'blue', //label和icon的背景色 活跃状态下（选中） 。
         // inactiveBackgroundColor:'green', // label和icon的背景色 不活跃状态下（未选中）。
         // style:{}, // tabbar的样式。
@@ -34,7 +34,7 @@ const Tab = TabNavigator({
         inactiveTintColor: 'black', // label和icon的前景色 不活跃状态下(未选中)。
         showLabel: true, // 是否显示label，默认开启。
 
-        // 安卓属性
+        // ***************android属性***************
         // showLabel:true, //是否显示label，默认开启。
         // scrollEnabled:true, // 是否启用可滚动选项卡。
         // tabStyle:{}, // tab的样式。
@@ -64,7 +64,7 @@ const Tab = TabNavigator({
 
 // 将需要跳转的页面注册在这里，全局才可以跳转
 export default Routers = StackNavigator({
-    // 将Tab包裹在StackNavigator里面可以保证跳转页面的时候隐藏tabbar
+    // 将Tab包裹在StackNavigator里面可以保证跳转页面的时候隐藏tabBar
     Tab: {
         screen: Tab
     },
