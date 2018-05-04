@@ -11,6 +11,10 @@ _Simple, detailed, quick tutorial. Attach a demo._
 
 这里不介绍[react](http://www.ruanyifeng.com/blog/2015/03/react.html)、[react-native](http://reactnative.cn/)和[ES6](http://blog.csdn.net/beverley__/article/details/78547973)语法。
 
+### 测试
+#### 测试
+##### 测试
+
 ## 预览
 ![screen](./screenShorts/screen.gif)
 
@@ -28,11 +32,11 @@ _Simple, detailed, quick tutorial. Attach a demo._
 
 配置开发环境需跳跃出那一道鸿沟，你懂得！推荐[lantern](https://github.com/getlantern/lantern)。
 
-### 增加SDK Tools (android)
+##### 增加SDK Tools (android)
 
 ![SDK_Tools](./screenShorts/add_tools.png)
 
-### 增加NDK (android)
+##### 增加NDK (android)
 
 ![NDK](./screenShorts/add_ndk.png)
 
