@@ -116,7 +116,7 @@ ios可以`react-native run-ios`，或者按上图的按钮。
 ![develop](./screenShorts/develop.png)
 
 #### 下载jar失败
-遇到类似下载失败的情况，复制网址下载，放到`C:\Users\zheng\AppData\Local\Android\Sdk\tools\lib`文件夹里边即可。[sdk位置](#增加sdk tools (android))
+遇到类似下载失败的情况，复制网址下载，放到`C:\Users\zheng\AppData\Local\Android\Sdk\tools\lib`文件夹里边即可。[sdk位置](#增加sdk-tools-android)
 
 ![NDK](./screenShorts/jar_fail.png)
 
@@ -137,7 +137,7 @@ ios可以`react-native run-ios`，或者按上图的按钮。
 #### 小米手机
 关闭`MIUI优化`，不然小米是不允许你将你的软件通过react-native run-android来安装到手机上的。
 
-### 呼出开发者菜单
+#### 呼出开发者菜单
 
 ![developMenu](./screenShorts/developMenu.png)
 
