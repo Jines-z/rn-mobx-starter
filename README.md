@@ -7,7 +7,7 @@ _Simple, detailed, quick tutorial. Attach a demo._
 [![Mobx](https://img.shields.io/badge/mobx-^4.2.0-orange.svg?style=flat-square)](https://github.com/mobxjs/mobx)
 
 ## 前言
-开发一款产品，通常来说你需要做三件事情：搭建开发环境 -> 写代码 -> 调试 -> 打包发布。这里不介绍[react](http://www.ruanyifeng.com/blog/2015/03/react.html)、[react-native](http://reactnative.cn/)和[ES6](http://blog.csdn.net/beverley__/article/details/78547973)语法。
+开发一款产品，通常来说你需要做三件事情：搭建开发环境 -> 写代码 + 调试 -> 打包发布。这里不介绍[react](http://www.ruanyifeng.com/blog/2015/03/react.html)、[react-native](http://reactnative.cn/)和[ES6](http://blog.csdn.net/beverley__/article/details/78547973)语法。
 
 ## 预览
 ![screen](./screenShorts/screen.gif)
