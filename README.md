@@ -7,12 +7,23 @@ _Simple, detailed, quick tutorial. Attach a demo._
 [![Mobx](https://img.shields.io/badge/mobx-^4.2.0-orange.svg?style=flat-square)](https://github.com/mobxjs/mobx)
 
 ## 前言
-开发一款产品，通常来说你需要做三件事情：搭建开发环境 -> 写代码 + 调试 -> 打包发布。这里不介绍[react](http://www.ruanyifeng.com/blog/2015/03/react.html)、[react-native](http://reactnative.cn/)和[ES6](http://blog.csdn.net/beverley__/article/details/78547973)语法。
+开发一款产品，通常来说你需要做三件事情：搭建开发环境 -> 写代码 + 调试 -> 打包发布。
+
+这里不介绍[react](http://www.ruanyifeng.com/blog/2015/03/react.html)、[react-native](http://reactnative.cn/)和[ES6](http://blog.csdn.net/beverley__/article/details/78547973)语法。
 
 ## 预览
 ![screen](./screenShorts/screen.gif)
 
-## ① 搭建开发环境
+## 目录
+- [项目环境及各种依赖的版本](#搭建开发环境)
+-   asdasd
+- [First Blood](#first-blood)
+- [Android 6.0及以上修改两个文件](#android-60及以上修改两个文件)
+- [Run](#run)
+- [更换设备](#更换设备)
+- [常用命令](#常用命令)
+
+## 搭建开发环境
 按照[react-native中文网](http://reactnative.cn/)-文档-搭建开发环境，选择需要的环境开始搭建。
 
 配置开发环境需跳跃出那一道鸿沟，你懂得！推荐[lantern](https://github.com/getlantern/lantern)。
@@ -30,7 +41,7 @@ _Simple, detailed, quick tutorial. Attach a demo._
 
 ![NDK](./screenShorts/path_ndk.png)
 
-## ② 设备的配置
+## 设备的配置
 ### Android
 打开手机的开发者模式，打开USB调试（模拟器跳过前两句话），连接电脑成功后在终端或者cmd运行`adb devices`。
 ~~~
@@ -88,7 +99,8 @@ compile 'com.facebook.react:react-native:+'
 react-native run-android
 ~~~
 ios可以`react-native run-ios`，或者按上图的按钮。
-**注意**：第一次运行`react-native run-android`到99%时，会卡住，这时手机底部会出现一个提示框，询问是否安装软件，点击确定即可。ios需要在设置 ->通用里信任一下。
+
+**注意**：第一次运行`react-native run-android`到99%时会卡住，这时手机底部会出现一个提示框，询问是否安装软件，点击确定即可。ios需要在 设置 -> 通用 里信任一下。
 
 ### 调试
 先来一波常见的错误
@@ -124,50 +136,32 @@ ios可以`react-native run-ios`，或者按上图的按钮。
 
 #### 小米手机
 关闭`MIUI优化`，不然小米是不允许你将你的软件通过react-native run-android来安装到手机上的。
-## 目录
-- [项目环境及各种依赖的版本](#项目环境及各种依赖的版本)
-- [First Blood](#first-blood)
-- [Android 6.0及以上修改两个文件](#android-60及以上修改两个文件)
-- [Run](#run)
-- [更换设备](#更换设备)
-- [常用命令](#常用命令)
-## 项目环境及各种依赖的版本：
-**Windows 10**：(Windows上只能开发android)
-1. oppo 5.1
-2. 虚拟机-android 4.2.2
-3. 虚拟机-android 5.1.0
-4. 虚拟机-android 7.0.0
-5. 虚拟机-android 8.0
-6. node 8.9.0
-7. npm 5.5.1
-8. python 2.7.14
-9. Android Studio 3.0 (用来下载sdk)
-10. javac 1.8.0_151
 
-**MacOS 10.13.2**：
-1. Xcode 9.2
-2. iphone 11.2.1
-3. oppo 5.1
-4. 虚拟机-iphone6
-5. 虚拟机-iphone8
-6. 虚拟机-iphoneX
-7. node 9.3.0
-8. npm 5.6.0
-9. Android Studio 3.0 (用来下载sdk)
-10. javac 1.8.0_151
+### 呼出开发者菜单
 
-**注意**：第一次运行`react-native run-android`到99%时，会卡住，这时手机底部会出现一个提示框，询问是否安装软件，点击确定即可。ios需要在设置 ->通用里信任一下。
+![developMenu](./screenShorts/developMenu.png)
 
+**Android**
 
+在设置或者手机管家里找到权限设置，打开悬浮窗权限。通过摇晃手机呼出开发者菜单。
 
-## 安卓打包Release.apk图片不显示
-在根目录下执行
+**IOS**
+
+直接摇
+
+**模拟器**
+
+按`Ctrl+M`或者`Command+D`呼出开发者菜单
+## 打包
+### Android
+一：在`./android/app/src/main/`新建`assets`文件夹，将资源打进去。在根目录执行：
 ~~~
 react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.bundle --assets-dest android/app/src/main/res/
 ~~~
+二：[打包](https://reactnative.cn/docs/0.51/signed-apk-android.html#content)
 
-## 更换设备
-当你想换手机或者模拟器，并且系统不同的情况时，需要修改上文提到的两个文件，删除下边三个文件夹。
+### 更换设备
+当你想换手机或者模拟器，并且系统不同的情况时，需要修改上文提到的[两个文件](#android-60及以上修改两个文件)，删除下边三个文件夹。
 ~~~
 ~代表项目根目录
 1. ~/node_modules
