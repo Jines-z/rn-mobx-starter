@@ -1,4 +1,6 @@
+<img src="./logo.png" alt="logo" height="55" align="right" />
 # React Native Mobx Starter
+
 [![React-Native](https://img.shields.io/badge/react--native-^0.51.0-brightgreen.svg?style=flat-square)](https://github.com/facebook/react-native)
 [![React](https://img.shields.io/badge/react-^16.0.0-sliver.svg?style=flat-square)](https://github.com/facebook/react)
 [![Mobx](https://img.shields.io/badge/mobx-^4.2.0-orange.svg?style=flat-square)](https://github.com/mobxjs/mobx)
