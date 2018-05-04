@@ -11,10 +11,6 @@ _Simple, detailed, quick tutorial. Attach a demo._
 
 这里不介绍[react](http://www.ruanyifeng.com/blog/2015/03/react.html)、[react-native](http://reactnative.cn/)和[ES6](http://blog.csdn.net/beverley__/article/details/78547973)语法。
 
-### 测试
-#### 测试
-##### 测试
-
 ## 预览
 ![screen](./screenShorts/screen.gif)
 
@@ -40,13 +36,13 @@ _Simple, detailed, quick tutorial. Attach a demo._
 
 ![NDK](./screenShorts/add_ndk.png)
 
-### 配置NDK环境变量 (android)
+##### 配置NDK环境变量 (android)
 新建ANDROID_NDK_HOME，指向路径与下图相同，并在path中添加一遍。
 
 ![NDK](./screenShorts/path_ndk.png)
 
 ## 设备的配置
-### Android
+#### Android
 打开手机的开发者模式，打开USB调试（模拟器跳过前两句话），连接电脑成功后在终端或者cmd运行`adb devices`。
 ~~~
 $ adb devices
@@ -71,7 +67,7 @@ com.android.tools.build:gradle:1.2.3
 com.android.tools.build:gradle:2.2.3
 ~~~
 
-### IOS
+#### IOS
 首先用Xcode打开`./ios/xxxx.xcodeproj`
 
 ![IOS_RUN](./screenShorts/ios_run.png)
@@ -79,13 +75,13 @@ com.android.tools.build:gradle:2.2.3
 真机调试：自行百度，开发者账号 -> 连接iphone -> 无线连接 -> iphone信任设备
 
 ## 写代码 + 调试
-### Down
+##### Down
 ~~~
 git clone https://github.com/beverle-y/rn-mobx-starter.git
 ~~~
 这样我们的代码就有啦~
 
-### Install
+##### Install
 ~~~
 yarn install
 ~~~
@@ -98,7 +94,7 @@ compile 'com.facebook.react:react-native:+'
 ~~~
 有关其他依赖的配置方法，[点击查看](https://github.com/beverle-y/note)。
 
-### Run
+##### Run
 ~~~
 react-native run-android
 ~~~
@@ -109,22 +105,22 @@ ios可以`react-native run-ios`，或者按上图的按钮。
 ### 调试
 先来一波常见的错误
 
-#### No connected devices！
+##### No connected devices！
 检查是否正确连接手机并确认USB调试是否开启。
 
 ![noconnect](./screenShorts/noconnect.png)
 
-#### The development server returned response error code : 500
+##### The development server returned response error code : 500
 `babel-preset-react-native`版本太高，建议降至`babel-preset-react-native@4.0.0`
 
 ![develop](./screenShorts/develop.png)
 
-#### 下载jar失败
+##### 下载jar失败
 遇到类似下载失败的情况，复制网址下载，放到`C:\Users\zheng\AppData\Local\Android\Sdk\tools\lib`文件夹里边即可。[sdk位置](#增加sdk tools (android))
 
 ![NDK](./screenShorts/jar_fail.png)
 
-#### Could not connect to development server.
+##### Could not connect to development server.
 
 ![connect](./screenShorts/connect.png)
 
@@ -138,7 +134,7 @@ ios可以`react-native run-ios`，或者按上图的按钮。
 7. 回到开发者菜单然后选择`Reload JS`。
 8. 如果是模拟器，跳过1和2，按`Ctrl+M`或者`Command+D`呼出开发者菜单，执行4567。
 
-#### 小米手机
+##### 小米手机
 关闭`MIUI优化`，不然小米是不允许你将你的软件通过react-native run-android来安装到手机上的。
 
 ### 呼出开发者菜单
@@ -157,14 +153,14 @@ ios可以`react-native run-ios`，或者按上图的按钮。
 
 按`Ctrl+M`或者`Command+D`呼出开发者菜单
 ## 打包
-### Android
+##### Android
 一：在`./android/app/src/main/`新建`assets`文件夹，将资源打进去。在根目录执行：
 ~~~
 react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.bundle --assets-dest android/app/src/main/res/
 ~~~
 二：[打包](https://reactnative.cn/docs/0.51/signed-apk-android.html#content)
 
-### 更换设备
+##### 更换设备
 当你想换手机或者模拟器，并且系统不同的情况时，需要修改上文提到的[两个文件](#android-60及以上修改两个文件)，删除下边三个文件夹。
 ~~~
 ~代表项目根目录
