@@ -3,7 +3,7 @@
 [![React](https://img.shields.io/badge/react-^16.0.0-sliver.svg?style=flat-square)](https://github.com/facebook/react)
 [![Mobx](https://img.shields.io/badge/mobx-^4.2.0-orange.svg?style=flat-square)](https://github.com/mobxjs/mobx)
 [![React-navigation](https://img.shields.io/badge/react--navigation-^1.5.11-yellowgreen.svg?style=flat-square)](https://github.com/react-navigation/react-navigation)
-[![Babel-preset-react-native](https://img.shields.io/badge/babel--preset--react--native-^4.0.0-lightsteelblue.svg?style=flat-square)](https://www.npmjs.com/package/babel-preset-react-native)
+[![Babel-preset-react-native](https://img.shields.io/badge/babel--preset--react--native-^4.0.0?style=flat-square)](https://www.npmjs.com/package/babel-preset-react-native)
 
 本项目致力于帮助`react-native`新手小白快速上手，不介绍[react](http://www.ruanyifeng.com/blog/2015/03/react.html)、[react-native](http://reactnative.cn/)和[ES6](http://blog.csdn.net/beverley__/article/details/78547973)语法。如果你具备`react`开发经验，写代码将不是问题，坑只在于开始的配置上边。
 
