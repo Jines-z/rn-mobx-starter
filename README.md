@@ -18,13 +18,16 @@ _Simple, detailed, quick tutorial. Attach a demo._
 配置开发环境需跳跃出那一道鸿沟，你懂得！推荐[lantern](https://github.com/getlantern/lantern)。
 
 ### 增加SDK Tools (android)
+
 ![SDK_Tools](./screenShorts/add_tools.png)
 
 ### 增加NDK (android)
+
 ![NDK](./screenShorts/add_ndk.png)
 
 ### 配置NDK环境变量 (android)
 新建ANDROID_NDK_HOME，指向路径与下图相同，并在path中添加一遍。
+
 ![NDK](./screenShorts/path_ndk.png)
 
 ## ② 设备的配置
@@ -60,6 +63,67 @@ com.android.tools.build:gradle:2.2.3
 
 真机调试：自行百度，开发者账号 -> 连接iphone -> 无线连接 -> iphone信任设备
 
+## 写代码 + 调试
+### Down
+~~~
+git clone https://github.com/beverle-y/rn-mobx-starter.git
+~~~
+这样我们的代码就有啦~
+
+### Install
+~~~
+yarn install
+~~~
+
+Android需修改`./node_modules/react-native-video/android/build.gradle`中
+~~~
+provided 'com.facebook.react:react-native:+'
+->
+compile 'com.facebook.react:react-native:+'
+~~~
+有关其他依赖的配置方法，[点击查看](https://github.com/beverle-y/note)。
+
+### Run
+~~~
+react-native run-android
+~~~
+ios可以`react-native run-ios`，或者按上图的按钮。
+**注意**：第一次运行`react-native run-android`到99%时，会卡住，这时手机底部会出现一个提示框，询问是否安装软件，点击确定即可。ios需要在设置 ->通用里信任一下。
+
+### 调试
+先来一波常见的错误
+
+#### No connected devices！
+检查是否正确连接手机并确认USB调试是否开启。
+
+![noconnect](./screenShorts/noconnect.png)
+
+#### The development server returned response error code : 500
+`babel-preset-react-native`版本太高，建议降至`babel-preset-react-native@4.0.0`
+
+![develop](./screenShorts/develop.png)
+
+#### 下载jar失败
+遇到类似下载失败的情况，复制网址下载，放到`C:\Users\zheng\AppData\Local\Android\Sdk\tools\lib`文件夹里边即可。[sdk位置](#增加sdk tools (android))
+
+![NDK](./screenShorts/jar_fail.png)
+
+#### Could not connect to development server.
+
+![connect](./screenShorts/connect.png)
+
+如果系统小于5.0，此时是红屏报错状态，现在你要做几件事：
+1. 首先确保你的电脑和手机设备在同一个Wi-Fi环境下。
+2. 在你的手机设置里边或者手机管家里边找到权限设置，打开悬浮窗权限。
+3. 回到红着屏的软件，摇晃设备打开开发者菜单。
+4. 点击进入`Dev Settings`。
+5. 点击`Debug server host & port for device`。
+6. 输入你电脑的IP地址和端口号（譬如192.168.10.131:8081）。在Mac上，你可以在系统设置/网络里找查询你的IP地址。在Windows上，打开cmd并输入ipconfig来查询你的IP地址。
+7. 回到开发者菜单然后选择`Reload JS`。
+8. 如果是模拟器，跳过1和2，按`Ctrl+M`或者`Command+D`呼出开发者菜单，执行4567。
+
+#### 小米手机
+关闭`MIUI优化`，不然小米是不允许你将你的软件通过react-native run-android来安装到手机上的。
 ## 目录
 - [项目环境及各种依赖的版本](#项目环境及各种依赖的版本)
 - [First Blood](#first-blood)
@@ -92,41 +156,9 @@ com.android.tools.build:gradle:2.2.3
 9. Android Studio 3.0 (用来下载sdk)
 10. javac 1.8.0_151
 
-开始拉代码吧，`git clone https://github.com/beverle-y/rn-mobx-starter.git`
-
-### No connected devices！
-检查是否正确连接手机并确认USB调试是否开启。
-![noconnect](./screenShorts/noconnect.png)
-
-clone完成以后进入项目文件夹`cd rn-mobx-starter`&&`yarn`等待下载........100%
-
-## Run
-根据系统选择执行`react-native run-android`还是`react-native run-ios`
-
-如果Android系统大于5.0，执行成功后手机上会出现启动屏，观察server窗口bundle.js编译完成后启动屏会在两秒后消失进入主程序。
-
-**如果系统小于5.0**，此时是红屏报错状态，现在你要做几件事：
-![connect](./screenShorts/connect.png)
-1. 首先确保你的电脑和手机设备在同一个Wi-Fi环境下。
-2. 在你的手机设置里边或者手机管家里边找到权限设置，打开悬浮窗权限。
-3. 回到红着屏的软件，摇晃设备打开开发者菜单。
-4. 点击进入`Dev Settings`。
-5. 点击`Debug server host for device`。
-6. 输入你电脑的IP地址和端口号（譬如192.168.10.131:8081）。在Mac上，你可以在系统设置/网络里找查询你的IP地址。在Windows上，打开cmd并输入ipconfig来查询你的IP地址。
-7. 回到开发者菜单然后选择`Reload JS`。
-8. 如果是模拟器，跳过1和2，按`Ctrl+m`或者`Command+m`呼出开发者菜单，执行4567。
-
-**如果你是小米手机**，去关闭`MIUI优化`，不然小米是不允许你将你的软件通过react-native run-android来安装到手机上的。
-
 **注意**：第一次运行`react-native run-android`到99%时，会卡住，这时手机底部会出现一个提示框，询问是否安装软件，点击确定即可。ios需要在设置 ->通用里信任一下。
 
-### The development server returned response error code : 500
-`babel-preset-react-native`版本太高，建议降至`babel-preset-react-native@4.0.0`
-![develop](./screenShorts/develop.png)
 
-### 下载jar失败
-遇到类似下载失败的情况，复制网址下载，放到`C:\Users\zheng\AppData\Local\Android\Sdk\tools\lib`文件夹里边即可。
-![NDK](./screenShorts/jar_fail.png)
 
 ## 安卓打包Release.apk图片不显示
 在根目录下执行
