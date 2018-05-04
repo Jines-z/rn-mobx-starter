@@ -1,4 +1,4 @@
-<img src="./logo.png" alt="logo" height="50" align="right" />
+<img src="./logo.png" alt="logo" height="40" align="right" />
 
 # RN Mobx Starter
 
