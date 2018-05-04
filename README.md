@@ -1,18 +1,64 @@
 # ![logo](./logo.png)
 
-_简单，详细的快速入门教程_
+_Simple, detailed, quick tutorial. Attach a demo._
 
 [![React-Native](https://img.shields.io/badge/react--native-^0.51.0-brightgreen.svg?style=flat-square)](https://github.com/facebook/react-native)
 [![React](https://img.shields.io/badge/react-^16.0.0-sliver.svg?style=flat-square)](https://github.com/facebook/react)
 [![Mobx](https://img.shields.io/badge/mobx-^4.2.0-orange.svg?style=flat-square)](https://github.com/mobxjs/mobx)
 
 ## 前言
-开发一款产品，通常来说你需要做三件事情：搭建开发环境 -> 写代码 -> 打包发布。这里不介绍[react](http://www.ruanyifeng.com/blog/2015/03/react.html)、[react-native](http://reactnative.cn/)和[ES6](http://blog.csdn.net/beverley__/article/details/78547973)语法。
+开发一款产品，通常来说你需要做三件事情：搭建开发环境 -> 写代码 -> 调试 -> 打包发布。这里不介绍[react](http://www.ruanyifeng.com/blog/2015/03/react.html)、[react-native](http://reactnative.cn/)和[ES6](http://blog.csdn.net/beverley__/article/details/78547973)语法。
 
 ## 预览
 ![screen](./screenShorts/screen.gif)
 
 ## ① 搭建开发环境
+按照[react-native中文网](http://reactnative.cn/)-文档-搭建开发环境，选择需要的环境开始搭建。
+
+配置开发环境需跳跃出那一道鸿沟，你懂得！推荐[lantern](https://github.com/getlantern/lantern)。
+
+### 增加SDK Tools (android)
+![SDK_Tools](./screenShorts/add_tools.png)
+
+### 增加NDK (android)
+![NDK](./screenShorts/add_ndk.png)
+
+### 配置NDK环境变量 (android)
+新建ANDROID_NDK_HOME，指向路径与下图相同，并在path中添加一遍。
+![NDK](./screenShorts/path_ndk.png)
+
+## ② 设备的配置
+### Android
+打开手机的开发者模式，打开USB调试（模拟器跳过前两句话），连接电脑成功后在终端或者cmd运行`adb devices`。
+~~~
+$ adb devices
+List of devices attached
+emulator-9845 offline      # 模拟器
+JRNJVOU899999999 device    # 真实设备
+~~~
+注意，你只应当连接仅仅一个设备，并且当你的系统大于5.0时，运行`adb reverse tcp:8081 tcp:8081`。
+
+**Android 6.0及以上修改两个文件**
+~~~
+1. 修改android/gradle/wrapper/gradle-wrapper.properties
+
+distributionUrl=https\://services.gradle.org/distributions/gradle-2.2-all.zip
+->
+distributionUrl=https\://services.gradle.org/distributions/gradle-2.14.1-all.zip
+
+2. 修改android/build.gradle
+
+com.android.tools.build:gradle:1.2.3
+->
+com.android.tools.build:gradle:2.2.3
+~~~
+
+### IOS
+首先用Xcode打开`./ios/xxxx.xcodeproj`
+
+![IOS_RUN](./screenShorts/ios_run.png)
+
+真机调试：自行百度，开发者账号 -> 连接iphone -> 无线连接 -> iphone信任设备
 
 ## 目录
 - [项目环境及各种依赖的版本](#项目环境及各种依赖的版本)
@@ -46,46 +92,11 @@ _简单，详细的快速入门教程_
 9. Android Studio 3.0 (用来下载sdk)
 10. javac 1.8.0_151
 
-## First Blood
-按照[react-native中文网](http://reactnative.cn/)-文档-搭建开发环境，请仔细仔细再仔细的按照教程把需要的环境配置起来，并收藏该网址。
-
-配置开发环境需跳跃出那一道鸿沟，你懂得！推荐[lantern](https://github.com/getlantern/lantern)。
-
-### 增加SDK Tools (android)
-![SDK_Tools](./screenShorts/add_tools.png)
-
-### 增加NDK (android)
-![NDK](./screenShorts/add_ndk.png)
-
-### 配置NDK环境变量 (android)
-新建ANDROID_NDK_HOME，指向路径与下图相同，并在path中添加一遍。
-![NDK](./screenShorts/path_ndk.png)
-
-开始拉代码吧，`git clone https://github.com/beverle-y/rn-mobx-starter.git`，然后打开手机的开发者模式，打开USB调试，插到电脑上面之后运行`adb devices`。
-
-~~~
-$ adb devices
-List of devices attached
-emulator-9845 offline   # Google模拟器
-JRNJVOU899999999 device         # 真实设备
-~~~
-注意，你只应当连接仅仅一个设备，并且当你的系统大于5.0时，运行`adb reverse tcp:8081 tcp:8081`。
+开始拉代码吧，`git clone https://github.com/beverle-y/rn-mobx-starter.git`
 
 ### No connected devices！
 检查是否正确连接手机并确认USB调试是否开启。
 ![noconnect](./screenShorts/noconnect.png)
-
-## Android 6.0及以上修改两个文件
-~~~
-1. 修改android/gradle/wrapper/gradle-wrapper.properties
-distributionUrl=https\://services.gradle.org/distributions/gradle-2.2-all.zip
-->
-distributionUrl=https\://services.gradle.org/distributions/gradle-2.14.1-all.zip
-2. 修改android/build.gradle
-com.android.tools.build:gradle:1.2.3
-->
-com.android.tools.build:gradle:2.2.3
-~~~
 
 clone完成以后进入项目文件夹`cd rn-mobx-starter`&&`yarn`等待下载........100%
 
