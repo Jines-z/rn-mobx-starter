@@ -87,7 +87,7 @@ com.android.tools.build:gradle:2.2.3
 
 ![IOS_RUN](./screenShorts/ios_run.png)
 
-真机调试：自行百度，开发者账号 -> 连接iphone -> 无线连接 -> iphone信任设备
+真机调试：自行百度，开发者账号 -> 连接iphone -> 无线连接 -> iphone信任设备。
 
 ## 写代码 + 调试
 #### Down
@@ -118,7 +118,7 @@ ios可以`react-native run-ios`，或者按上图的按钮。
 **注意**：第一次运行`react-native run-android`到99%时会卡住，这时手机底部会出现一个提示框，询问是否安装软件，点击确定即可。ios需要在 设置 -> 通用 里信任一下。
 
 ### 调试
-先来一波常见的错误
+先来一波常见的错误。
 
 #### No connected devices！
 检查是否正确连接手机并确认USB调试是否开启。
@@ -126,7 +126,7 @@ ios可以`react-native run-ios`，或者按上图的按钮。
 ![noconnect](./screenShorts/noconnect.png)
 
 #### The development server returned response error code : 500
-`babel-preset-react-native`版本太高，建议降至`babel-preset-react-native@4.0.0`
+`babel-preset-react-native`版本太高，建议降至`babel-preset-react-native@4.0.0`。
 
 ![develop](./screenShorts/develop.png)
 
@@ -162,11 +162,11 @@ ios可以`react-native run-ios`，或者按上图的按钮。
 
 **IOS**
 
-直接摇
+直接摇。
 
 **模拟器**
 
-按`Ctrl+M`或者`Command+D`呼出开发者菜单
+按`Ctrl+M`或者`Command+D`呼出开发者菜单。
 ## 打包
 #### Android
 一：在`./android/app/src/main/`新建`assets`文件夹，将资源打进去。在根目录执行：
@@ -183,7 +183,7 @@ react-native bundle --platform android --dev false --entry-file index.js --bundl
 2. ~/android/.gradle
 3. ~/android/app/build
 ~~~
-接着`npm install` -> `react-native start --reset-cache`->`Ctrl+c`杀掉->`react-native run-android`
+接着`npm install` -> `react-native start --reset-cache`->`Ctrl+c`杀掉->`react-native run-android`。
 
 ## 常用命令
 1. `react-native start` ~~开一个本地服务器
@@ -194,4 +194,4 @@ react-native bundle --platform android --dev false --entry-file index.js --bundl
 6. `npm install xxxx --save-dev` 或 `yarn add xxxx --dev` ~~安装开发环境需要的依赖
 7. `npm uninstall xxxx` 或 `yarn remove xxxx` ~~卸载某一个依赖
 8. `rimraf node_nodules` ~~删除node_modules文件夹，也可以删除其他文件夹，推荐全局安装[gulp-rimraf](https://www.cnblogs.com/gulei/p/5407732.html)
-9. `cd android && ./gradlew assembleRelease` ~~[生成发行APK包](http://reactnative.cn/docs/0.45/signed-apk-android.html)
+9. `cd android && ./gradlew assembleRelease` ~~生成发行APK包
