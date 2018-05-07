@@ -15,8 +15,10 @@ _Simple, detailed, quick tutorial. Attach a demo._
 ![screen](./screenShorts/screen.gif)
 
 ## 目录
-- [项目环境及各种依赖的版本](#搭建开发环境)
--   asdasd
+- [搭建开发环境](#搭建开发环境)
+    -   [增加SDK Tools (android)](#增加sdk-tools-android)
+    -   [增加NDK (android)](#增加ndk-android)
+    -   [配置NDK环境变量 (android)](#配置ndk环境变量-android)
 - [First Blood](#first-blood)
 - [Android 6.0及以上修改两个文件](#android-60及以上修改两个文件)
 - [Run](#run)
