@@ -46,6 +46,7 @@ _Simple, detailed, quick tutorial. Attach a demo._
 #### 增加SDK Tools (android)
 
 ![SDK_Tools](./screenShorts/add_tools.png)
+![SDK_Tools](./screenShorts/screen1.png)
 
 #### 增加NDK (android)
 
