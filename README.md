@@ -47,11 +47,23 @@ _Simple, detailed, quick tutorial. Attach a demo._
 ![SDK_Tools](./screenShorts/add_tools.png)
 
 #### 增加NDK (android)
+**建议手动下载：**
 
+Windows：
+
+[32位](https://dl.google.com/android/repository/android-ndk-r10e-windows-x86.zip)
+
+[64位](https://dl.google.com/android/repository/android-ndk-r10e-windows-x86_64.zip)
+
+Mac:
+
+[Darwin](https://dl.google.com/android/repository/android-ndk-r10e-darwin-x86_64.zip)
+
+**Android Studio (下载的ndk是最新版，不稳定，不推荐)**
 ![NDK](./screenShorts/add_ndk.png)
 
 #### 配置NDK环境变量 (android)
-新建ANDROID_NDK_HOME，指向路径与下图相同，并在path中添加一遍。
+新建ANDROID_NDK_HOME，指向路径修改成你自己的存放路径，并在path中添加一遍。
 
 ![NDK](./screenShorts/path_ndk.png)
 
