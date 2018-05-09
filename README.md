@@ -22,7 +22,6 @@ _Simple, detailed, quick tutorial. Attach a demo._
 - [设备的配置](#设备的配置)
     -   [Android](#android)
     -   [IOS](#ios)
-    -   [配置NDK环境变量 (android)](#配置ndk环境变量-android)
 - [写代码 + 调试](#写代码--调试)
     - [Down](#down)
     - [Install](#install)
