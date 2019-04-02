@@ -77,7 +77,7 @@ com.android.tools.build:gradle:2.2.3
 ## 写代码 + 调试
 #### Down
 ~~~
-git clone https://github.com/beverle-y/rn-mobx-starter.git
+git clone https://github.com/jines-z/rn-mobx-starter.git
 ~~~
 这样我们的代码就有啦~
 
@@ -92,7 +92,7 @@ provided 'com.facebook.react:react-native:+'
 ->
 compile 'com.facebook.react:react-native:+'
 ~~~
-有关其他依赖的配置方法，[点击查看](https://github.com/beverle-y/note)。
+有关其他依赖的配置方法，[点击查看](https://github.com/jines-z/note)。
 
 #### Run
 ~~~
